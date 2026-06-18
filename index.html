@@ -45,6 +45,11 @@ nav.top .lockup .wave{width:42px;height:auto}
 nav.top .lockup .word{font-size:20px}
 footer .lockup .wave{width:34px;height:auto}
 footer .lockup .word{font-size:19px}
+/* top logo: wave re-traces itself periodically — alive but restrained */
+@media (prefers-reduced-motion: no-preference){
+  nav.top .lockup .wave-path{stroke-dasharray:100;animation:waveTrace 11s ease-in-out infinite}
+  @keyframes waveTrace{0%{stroke-dashoffset:100}11%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+}
 
 /* nav */
 nav.top{display:flex;justify-content:space-between;align-items:center;padding-bottom:8px}
@@ -264,7 +269,7 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
   <nav class="top">
     <a class="lockup health" href="#" aria-label="AiMS Health">
       <svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true">
-        <path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveHealthAnim)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+        <path class="wave-path" pathLength="100" d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveHealthAnim)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
       </svg>
       <span class="word"><span class="ai">Ai</span><span class="brand-half">MS Health</span></span>
     </a>
