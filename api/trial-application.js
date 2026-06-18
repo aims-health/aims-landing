@@ -29,6 +29,7 @@ module.exports = async function handler(req, res) {
   const name = (body.name || '').toString().trim();
   const email = (body.email || '').toString().trim();
   const role = (body.role || '').toString().trim();
+  const context = (body.context || '').toString().trim();
   const organisation = (body.organisation || '').toString().trim();
   const phone = (body.phone || '').toString().trim();
   const message = (body.message || '').toString().trim();
@@ -51,6 +52,7 @@ module.exports = async function handler(req, res) {
     '<table cellpadding="6" style="font-family:system-ui,sans-serif;font-size:14px;border-collapse:collapse">' +
     '<tr><td><strong>Name</strong></td><td>' + escapeHtml(name) + '</td></tr>' +
     '<tr><td><strong>Role</strong></td><td>' + escapeHtml(role) + '</td></tr>' +
+    '<tr><td><strong>Interested in</strong></td><td>' + escapeHtml(context || '—') + '</td></tr>' +
     '<tr><td><strong>Organisation</strong></td><td>' + escapeHtml(organisation || '—') + '</td></tr>' +
     '<tr><td><strong>Email</strong></td><td>' + escapeHtml(email) + '</td></tr>' +
     '<tr><td><strong>Phone</strong></td><td>' + escapeHtml(phone || '—') + '</td></tr>' +
@@ -60,7 +62,8 @@ module.exports = async function handler(req, res) {
 
   const text =
     'New founding-cohort trial application\n\n' +
-    'Name: ' + name + '\nRole: ' + role + '\nOrganisation: ' + (organisation || '-') +
+    'Name: ' + name + '\nRole: ' + role + '\nInterested in: ' + (context || '-') +
+    '\nOrganisation: ' + (organisation || '-') +
     '\nEmail: ' + email + '\nPhone: ' + (phone || '-') + '\n\n' + (message || '-');
 
   try {

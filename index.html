@@ -63,18 +63,25 @@ nav.top{display:flex;justify-content:space-between;align-items:center;padding-bo
 @media(max-width:640px){.hero-bar{margin-top:26px}}
 
 /* liquid-glass persona pill */
+.persona-pill-wrap{position:relative;z-index:1;min-width:0}
 .persona-pill{display:inline-flex;gap:4px;padding:5px;border-radius:99px;
   background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,0) 100%);
   -webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);
   border:1px solid rgba(255,255,255,.14);
   box-shadow:0 10px 34px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(255,255,255,.04)}
 .seg{border:0;background:transparent;cursor:pointer;font-family:'Inter Tight',sans-serif;font-weight:600;font-size:14px;color:var(--text-3);
-  padding:11px 18px;border-radius:99px;transition:color .2s,background .2s,box-shadow .2s,transform .12s;white-space:nowrap;letter-spacing:-.01em}
-.seg:hover{color:var(--text-1)}
+  padding:11px 17px;border-radius:99px;transition:color .2s,background .2s,box-shadow .2s,transform .12s;white-space:nowrap;letter-spacing:-.01em;flex:0 0 auto}
+.seg:hover{color:var(--aicare-light)}
 .seg:active{transform:scale(.97)}
 .seg.active{color:#fff;background:linear-gradient(135deg,var(--aicare) 0%,var(--aims) 100%);box-shadow:0 4px 18px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.35)}
-@media(max-width:760px){.persona-pill{display:grid;grid-template-columns:1fr 1fr;gap:6px}}
-@media(max-width:560px){.seg{padding:12px 8px;font-size:13px;text-align:center}}
+.seg.active:hover{color:#fff}
+/* mobile: pill row scrolls horizontally, Product stays leftmost; page itself never side-scrolls */
+@media(max-width:760px){
+  .persona-pill-wrap{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:99px}
+  .persona-pill-wrap::-webkit-scrollbar{display:none}
+  .persona-pill{display:inline-flex;width:max-content}
+  .seg{padding:11px 15px;font-size:13.5px}
+}
 
 /* hint line under hero bar */
 .hero-hint{margin-top:16px;font-size:13.5px;color:var(--text-3);display:flex;align-items:center;gap:9px;padding-left:6px}
@@ -125,6 +132,41 @@ nav.top{display:flex;justify-content:space-between;align-items:center;padding-bo
 .rail-cta h4{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
 .rail-cta p{font-size:13.5px;color:var(--text-2);line-height:1.5;margin-bottom:16px}
 .rail-cta .btn{width:100%;justify-content:center}
+
+/* ============= PRODUCT VIEW (three product cards) ============= */
+.prod-list{display:flex;flex-direction:column;gap:18px}
+.prod-card{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;padding:34px 36px;border-radius:24px;
+  background:var(--card-bg);border:1px solid var(--card-border);position:relative;overflow:hidden;transition:border-color .2s}
+.prod-card:hover{border-color:rgba(255,255,255,.14)}
+.prod-card::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 120% at 0% 0%,var(--pc-soft),transparent 55%);pointer-events:none}
+.prod-card>*{position:relative;z-index:1}
+.prod-card.aims{--pc:var(--aims);--pc-text:var(--aims-light);--pc-soft:rgba(147,51,234,.16)}
+.prod-card.aicare{--pc:var(--aicare);--pc-text:var(--aicare-light);--pc-soft:rgba(6,182,212,.16)}
+.prod-card.plus{--pc:#a78bfa;--pc-text:#c4b5fd;--pc-soft:rgba(147,51,234,.14)}
+@media(max-width:760px){.prod-card{grid-template-columns:1fr;gap:22px;padding:28px 22px}}
+.prod-main .pc-mark{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.prod-main .pc-mark .word{font-family:'Inter Tight',sans-serif;font-weight:800;letter-spacing:-.03em;font-size:30px}
+.prod-main .pc-mark .word .ai{background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(255,255,255,.78));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.prod-main .pc-mark .word .brand-half{color:var(--text-1);-webkit-text-stroke:.7px var(--pc);paint-order:stroke fill}
+.prod-main .pc-mark .wave{width:46px;height:auto}
+.prod-main .statement{font-size:clamp(17px,2vw,21px);color:var(--text-1);font-weight:500;line-height:1.4;letter-spacing:-.015em;margin-bottom:20px;max-width:40ch}
+.prod-main .statement b{color:var(--pc-text);font-weight:600}
+.prod-feats{display:flex;flex-wrap:wrap;gap:9px}
+.prod-feat{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:99px;background:rgba(255,255,255,.04);border:1px solid var(--card-border);font-size:13.5px;color:var(--text-2);font-weight:500}
+.prod-feat svg{width:14px;height:14px;color:var(--pc-text);flex-shrink:0}
+.prod-side{display:flex;flex-direction:column;gap:14px}
+.price-box{padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--card-border)}
+.price-box .pb-label{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--text-3);margin-bottom:14px}
+.tier-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.tier-row:last-child{border-bottom:0}
+.tier-row .tn{font-size:14px;font-weight:600;color:var(--text-2)}
+.tier-row .tp{font-family:'DM Mono',monospace;font-size:15px;font-weight:500;color:var(--text-1);white-space:nowrap}
+.tier-row .tp .per{font-size:11px;color:var(--text-3);margin-left:1px}
+.tier-row.entry .tn{color:var(--text-1)}
+.tier-row.entry .tp{color:var(--pc-text)}
+.tier-row.entry .tn::after{content:'·  entry';font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:9.5px;color:var(--pc-text);margin-left:8px;vertical-align:1px}
+.prod-side .btn{width:100%;justify-content:center}
+.prod-side .pc-note{font-size:11.5px;color:var(--text-3);text-align:center;line-height:1.4}
 
 /* ============= FOUNDING COHORT ============= */
 .cohort{margin-top:80px;padding:48px;border-radius:28px;background:linear-gradient(135deg,rgba(147,51,234,.12),rgba(6,182,212,.08));border:1px solid rgba(147,51,234,.22);position:relative;overflow:hidden}
@@ -230,14 +272,17 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
       </svg>
       <span class="word"><span class="ai">Ai</span><span class="brand-half">MS Health</span></span>
     </a>
-    <div class="persona-pill" role="tablist" aria-label="Choose your role">
-      <button class="seg active" data-persona="athlete" role="tab" aria-selected="true">Athlete</button>
-      <button class="seg" data-persona="sc" role="tab" aria-selected="false">S&amp;C</button>
-      <button class="seg" data-persona="coach" role="tab" aria-selected="false">Head Coach</button>
-      <button class="seg" data-persona="allied" role="tab" aria-selected="false">Allied Health</button>
+    <div class="persona-pill-wrap">
+      <div class="persona-pill" role="tablist" aria-label="Choose a view">
+        <button class="seg active" data-persona="product" role="tab" aria-selected="true">Product</button>
+        <button class="seg" data-persona="athlete" role="tab" aria-selected="false">Athlete</button>
+        <button class="seg" data-persona="sc" role="tab" aria-selected="false">S&amp;C Coach</button>
+        <button class="seg" data-persona="coach" role="tab" aria-selected="false">Head Coach</button>
+        <button class="seg" data-persona="allied" role="tab" aria-selected="false">Allied Health</button>
+      </div>
     </div>
   </section>
-  <div class="hero-hint"><span class="pulse"></span>Pick your role — the page rebuilds itself around you.</div>
+  <div class="hero-hint"><span class="pulse"></span>Start with the product — or pick your role. The page rebuilds around you.</div>
 
   <!-- PERSONA STAGE (rendered + swapped by JS) -->
   <main class="stage" id="stage" aria-live="polite"></main>
@@ -409,7 +454,25 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
     }
   };
 
-  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  // ---------- product view (default) ----------
+  var PRODUCTS = [
+    {key:'aims', cls:'aims', wm:['Ai','MS'], name:'AiMS',
+      statement:'An athlete management system. For strength and conditioning coaches and trainers.',
+      feats:['Strength programming','Testing & analytics','Bookings & scheduling','Wellness & recovery'],
+      tiers:[{n:'Solo',p:'$49'},{n:'Boutique',p:'$249'},{n:'Performance',p:'$499'}]},
+    {key:'aicare', cls:'aicare', wm:['Ai','Care'], name:'AiCare',
+      statement:'The intelligent clinic manager. For allied health practices.',
+      feats:['SOAP + body chart','Tyro / Medicare / private health','Telehealth','Treatment plans + HEP'],
+      tiers:[{n:'Boutique',p:'$249'},{n:'Performance',p:'$349'}]},
+    {key:'plus', cls:'plus', wm:['Ai','MS+'], name:'AiMS Plus',
+      statement:'The whole kit. For multidisciplinary teams. Athlete management and clinic care, working together as one.',
+      punch:"Yes, one — we're all you need.",
+      feats:['Cross-module dashboards','Athlete passport','One billing account','Closed-loop everything'],
+      tiers:[{n:'Boutique',p:'$499'},{n:'Performance',p:'$799'}]}
+  ];
+  var PRODUCT_ACCENT = {accent:'#9333ea', accentText:'#c4b5fd', soft:'rgba(147,51,234,.14)'};
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 
   function build(p){
     var feats = p.features.map(function(f){
@@ -432,19 +495,47 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
       '</div>';
   }
 
+  function buildProduct(){
+    var check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+    var cards = PRODUCTS.map(function(p){
+      var feats = p.feats.map(function(f){ return '<span class="prod-feat">'+check+esc(f)+'</span>'; }).join('');
+      var tiers = p.tiers.map(function(t,i){
+        return '<div class="tier-row'+(i===0?' entry':'')+'"><span class="tn">'+esc(t.n)+'</span><span class="tp">'+esc(t.p)+'<span class="per">/mo</span></span></div>';
+      }).join('');
+      return '<section class="prod-card '+p.cls+'">'+
+        '<div class="prod-main">'+
+          '<div class="pc-mark"><svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true"><path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveHealth)" stroke-width="3.4" stroke-linecap="round" fill="none"/></svg>'+
+            '<span class="word"><span class="ai">'+esc(p.wm[0])+'</span><span class="brand-half" style="-webkit-text-stroke-color:var(--pc)">'+esc(p.wm[1])+'</span></span></div>'+
+          '<p class="statement">'+esc(p.statement)+(p.punch?' <b>'+esc(p.punch)+'</b>':'')+'</p>'+
+          '<div class="prod-feats">'+feats+'</div>'+
+        '</div>'+
+        '<div class="prod-side">'+
+          '<div class="price-box"><div class="pb-label">Pricing</div>'+tiers+'</div>'+
+          '<button class="btn btn-primary" data-open-modal data-product="'+esc(p.name)+'">Apply for '+esc(p.name)+' trial →</button>'+
+          '<div class="pc-note">30-day founding-cohort trial · free</div>'+
+        '</div>'+
+      '</section>';
+    }).join('');
+    return ''+
+      '<div class="p-eyebrow eyebrow"><span class="pip"></span>The platform</div>'+
+      '<h1 class="p-head">One platform. Pick a module — or run them as one.</h1>'+
+      '<div class="prod-list">'+cards+'</div>';
+  }
+
   var stage = document.getElementById('stage');
   var pills = document.querySelectorAll('.seg');
-  var current = 'athlete';
+  var current = 'product';
 
-  function setAccent(p){
-    document.documentElement.style.setProperty('--accent', p.accent);
-    document.documentElement.style.setProperty('--accent-text', p.accentText);
-    document.documentElement.style.setProperty('--accent-soft', p.soft);
+  function setAccent(a){
+    document.documentElement.style.setProperty('--accent', a.accent);
+    document.documentElement.style.setProperty('--accent-text', a.accentText);
+    document.documentElement.style.setProperty('--accent-soft', a.soft);
   }
 
   function render(key, animate){
-    var p = PERSONAS[key];
-    if(!p) return;
+    var html, accent;
+    if(key==='product'){ html = buildProduct(); accent = PRODUCT_ACCENT; }
+    else { var p = PERSONAS[key]; if(!p) return; html = build(p); accent = {accent:p.accent, accentText:p.accentText, soft:p.soft}; }
     current = key;
     pills.forEach(function(b){
       var on = b.getAttribute('data-persona')===key;
@@ -453,9 +544,9 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
     });
     if(animate){
       stage.classList.add('swapping');
-      setTimeout(function(){ setAccent(p); stage.innerHTML = build(p); stage.classList.remove('swapping'); }, 200);
+      setTimeout(function(){ setAccent(accent); stage.innerHTML = html; stage.classList.remove('swapping'); }, 200);
     } else {
-      setAccent(p); stage.innerHTML = build(p);
+      setAccent(accent); stage.innerHTML = html;
     }
   }
 
@@ -469,22 +560,35 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
       document.querySelector('.hero-bar').scrollIntoView({behavior:'smooth',block:'start'}); });
   });
 
-  // initial paint (no animation — frozen-clock-safe). Deep-linkable via #role.
+  // initial paint (no animation — frozen-clock-safe). Deep-linkable via #product / #role.
   var initial = (location.hash || '').replace('#','');
-  render(PERSONAS[initial] ? initial : 'athlete', false);
+  render((PERSONAS[initial] || initial==='product') ? initial : 'product', false);
 
   // ---------- modal ----------
   var modal = document.getElementById('modal');
   var roleSelect = document.getElementById('f-role');
-  function openModal(){
-    // preselect role matching current persona
-    var want = PERSONAS[current] ? PERSONAS[current].role : null;
-    if(want){ for(var i=0;i<roleSelect.options.length;i++){ if(roleSelect.options[i].value===want){ roleSelect.selectedIndex=i; break; } } }
+  var modalTitle = document.getElementById('modal-title');
+  var modalContext = 'Product overview';
+  function selectRole(want){ if(!want) return; for(var i=0;i<roleSelect.options.length;i++){ if(roleSelect.options[i].value===want){ roleSelect.selectedIndex=i; return; } } }
+  function openModal(trigger){
+    var product = trigger && trigger.getAttribute('data-product');
+    if(product){
+      modalContext = product;
+      modalTitle.textContent = 'Apply for your ' + product + ' trial';
+    } else if(PERSONAS[current]){
+      modalContext = PERSONAS[current].label + ' view';
+      modalTitle.textContent = 'Apply for your 30-day trial';
+      selectRole(PERSONAS[current].role);
+    } else {
+      modalContext = 'Product overview';
+      modalTitle.textContent = 'Apply for your 30-day trial';
+    }
     modal.classList.add('open'); document.body.style.overflow='hidden';
   }
   function closeModal(){ modal.classList.remove('open'); document.body.style.overflow=''; }
   document.addEventListener('click', function(e){
-    if(e.target.closest('[data-open-modal]')){ e.preventDefault(); openModal(); }
+    var opener = e.target.closest('[data-open-modal]');
+    if(opener){ e.preventDefault(); openModal(opener); }
     else if(e.target.closest('[data-close-modal]') || e.target===modal){ closeModal(); }
   });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
@@ -497,7 +601,7 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
   var success = document.getElementById('modal-success');
 
   function mailtoFallback(data){
-    var body = 'Name: '+data.name+'\nRole: '+data.role+'\nOrganisation: '+(data.organisation||'-')+'\nEmail: '+data.email+'\nPhone: '+(data.phone||'-')+'\n\n'+(data.message||'');
+    var body = 'Name: '+data.name+'\nRole: '+data.role+'\nInterested in: '+(data.context||'-')+'\nOrganisation: '+(data.organisation||'-')+'\nEmail: '+data.email+'\nPhone: '+(data.phone||'-')+'\n\n'+(data.message||'');
     return 'mailto:tim@aimshealth.com.au?subject='+encodeURIComponent('Founding cohort application — '+data.name)+'&body='+encodeURIComponent(body);
   }
 
@@ -506,7 +610,8 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
     msg.className='form-msg';
     var data = {
       name: form.name.value.trim(), role: form.role.value, organisation: form.organisation.value.trim(),
-      email: form.email.value.trim(), phone: form.phone.value.trim(), message: form.message.value.trim()
+      email: form.email.value.trim(), phone: form.phone.value.trim(), message: form.message.value.trim(),
+      context: modalContext
     };
     if(!data.name || !data.email){ msg.className='form-msg err show'; msg.innerHTML='Please add your name and email.'; return; }
 
