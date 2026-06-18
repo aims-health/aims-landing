@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AiMS Health — Athlete management. Clinical practice. One platform.</title>
-<meta name="description" content="AiMS Health is one platform, three modules. AiMS — the intelligent athlete management system. AiCare — the most efficient clinic manager. AiMS Plus — the complete performance + clinical platform. Apply for the 30-day founding cohort trial.">
+<title>AiMS Health — One platform for the whole performance team.</title>
+<meta name="description" content="AiMS Health is the athlete management and clinical platform built for performance teams. Pick your role — athlete, S&C, head coach, allied health — and see the platform built around you. Apply for the 30-day founding cohort trial.">
 <meta name="theme-color" content="#06060a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#06060a;
@@ -16,270 +16,196 @@
   --card-border:rgba(255,255,255,.06);
   --hairline:rgba(255,255,255,.06);
   --text-1:#fff;
-  --text-2:rgba(232,230,240,.7);
-  --text-3:rgba(232,230,240,.55);
+  --text-2:rgba(232,230,240,.72);
+  --text-3:rgba(232,230,240,.52);
   --aims:#9333ea;
   --aims-deep:#5b21b6;
   --aims-light:#a78bfa;
   --aicare:#06b6d4;
   --aicare-deep:#155e75;
   --aicare-light:#67e8f9;
-  --aistr:#fb923c;
   --pink:#ec4899;
+  --accent:var(--aims);
+  --accent-soft:rgba(147,51,234,.16);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--text-1);font-family:'Inter Tight',system-ui,-apple-system,sans-serif;font-weight:400;line-height:1.4;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(1400px 700px at 20% -10%,rgba(147,51,234,.12),transparent 60%),radial-gradient(900px 500px at 90% 30%,rgba(6,182,212,.08),transparent 60%),radial-gradient(circle at 50% 100%,rgba(147,51,234,.06),transparent 55%);pointer-events:none;z-index:0}
-.shell{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:32px 32px 96px}
-@media(max-width:640px){.shell{padding:24px 20px 64px}}
+html,body{background:var(--bg);color:var(--text-1);font-family:'Inter Tight',system-ui,-apple-system,sans-serif;font-weight:400;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(1200px 640px at 18% -12%,rgba(147,51,234,.13),transparent 60%),radial-gradient(900px 520px at 92% 12%,rgba(6,182,212,.10),transparent 60%),radial-gradient(circle at 50% 110%,rgba(147,51,234,.06),transparent 55%);pointer-events:none;z-index:0}
+.shell{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:24px 28px 88px}
+@media(max-width:640px){.shell{padding:18px 16px 56px}}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.16em;font-weight:600}
+.mono{font-family:'DM Mono',monospace}
 
 /* ============= LOGO LOCKUP ============= */
-.lockup{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;text-decoration:none;color:inherit}
-.lockup .wave{display:block;margin-bottom:6px}
-.lockup .word{font-family:'Inter Tight',sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1}
-.lockup .word .ai{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.78));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.lockup .word .brand-half{color:var(--text-1);-webkit-text-stroke:.7px var(--accent);paint-order:stroke fill}
-.lockup.aims{--accent:var(--aims)}
-.lockup.aicare{--accent:var(--aicare)}
-.lockup.plus{--accent:#a78bfa}
-.lockup.health{--accent:var(--aims)}
-
-nav.top .lockup .wave{width:46px;height:auto}
-nav.top .lockup .word{font-size:22px}
-
-.card .lockup .wave{width:56px;height:auto;margin-bottom:8px}
-.card .lockup .word{font-size:32px;letter-spacing:-.03em}
-.card .lockup{margin-bottom:24px}
-
-footer .lockup .wave{width:36px;height:auto}
-footer .lockup .word{font-size:20px}
+.lockup{display:inline-flex;align-items:center;gap:12px;line-height:1;text-decoration:none;color:inherit}
+.lockup .word{font-family:'Inter Tight',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1}
+.lockup .word .ai{background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(255,255,255,.78));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lockup .word .brand-half{color:var(--text-1);-webkit-text-stroke:.7px var(--aims);paint-order:stroke fill}
+nav.top .lockup .wave{width:42px;height:auto}
+nav.top .lockup .word{font-size:20px}
+.hero-bar .lockup .wave{width:58px;height:auto}
+.hero-bar .lockup .word{font-size:30px}
+footer .lockup .wave{width:34px;height:auto}
+footer .lockup .word{font-size:19px}
 
 /* nav */
-nav.top{display:flex;justify-content:space-between;align-items:center;padding-bottom:48px}
-.nav-links{display:flex;gap:32px;font-size:14px;color:var(--text-3);align-items:center}
-.nav-links a{color:var(--text-3);text-decoration:none;transition:color .18s;font-weight:500}
-.nav-links a:hover{color:var(--text-1)}
-.nav-cta{padding:9px 18px;border-radius:99px;background:linear-gradient(135deg,var(--aims),var(--pink));color:#fff !important;font-weight:600 !important;box-shadow:0 4px 14px rgba(147,51,234,.3)}
-@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}.nav-links{gap:12px}}
+nav.top{display:flex;justify-content:space-between;align-items:center;padding-bottom:8px}
+.nav-cta{padding:10px 20px;border-radius:99px;background:linear-gradient(135deg,var(--aims),var(--pink));color:#fff;font-weight:600;font-size:14px;box-shadow:0 4px 16px rgba(147,51,234,.32);border:0;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:filter .15s,transform .15s}
+.nav-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+@media(max-width:560px){.nav-cta{padding:9px 15px;font-size:13px}}
 
-/* hero */
-.hero{padding:32px 0 16px;text-align:left;max-width:1100px}
-.hero .eyebrow{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--aims-light);margin-bottom:24px}
-.hero h1{font-size:clamp(40px,7vw,86px);font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:24px}
-.hero h1 .a1{color:var(--text-1)}
-.hero h1 .a2{background:linear-gradient(135deg,var(--aims-light) 0%,var(--aicare) 55%,var(--pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero h1 .a3{color:var(--text-2);font-weight:500}
-.hero .sub{font-size:clamp(17px,1.7vw,22px);color:var(--text-2);max-width:64ch;line-height:1.5;margin-bottom:36px;font-weight:400}
+/* ============= HERO BAR: logo + persona pill ============= */
+.hero-bar{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:40px;padding:30px 34px;border-radius:30px;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--card-border);position:relative;overflow:hidden}
+.hero-bar::before{content:'';position:absolute;inset:0;background:radial-gradient(70% 140% at 12% 0%,rgba(6,182,212,.10),transparent 60%),radial-gradient(80% 160% at 90% 100%,rgba(147,51,234,.12),transparent 60%);pointer-events:none}
+.hero-bar .lockup,.persona-pill{position:relative;z-index:1}
+@media(max-width:760px){.hero-bar{flex-direction:column;align-items:stretch;gap:20px;padding:24px 20px;border-radius:24px}.hero-bar .lockup{justify-content:flex-start}}
+@media(max-width:640px){.hero-bar{margin-top:26px}}
 
-/* hero hub pills */
-.hero-hub{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;margin-bottom:8px}
-@media(max-width:920px){.hero-hub{grid-template-columns:1fr}}
-.hub-pill{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:99px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s,background .15s}
-.hub-pill:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.05)}
-.hub-pill .dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;box-shadow:0 0 18px var(--dot-glow)}
-.hub-pill.aims .dot{background:var(--aims);--dot-glow:rgba(147,51,234,.55)}
-.hub-pill.aicare .dot{background:var(--aicare);--dot-glow:rgba(6,182,212,.55)}
-.hub-pill.plus .dot{background:linear-gradient(135deg,var(--aims),var(--aicare));--dot-glow:rgba(147,51,234,.4)}
-.hub-pill .label{display:flex;flex-direction:column;gap:2px;min-width:0}
-.hub-pill .name{font-weight:800;font-size:15px;letter-spacing:-.01em}
-.hub-pill .tag{font-size:12px;color:var(--text-3);font-weight:500;line-height:1.25}
-.hub-pill .go{margin-left:auto;color:var(--text-3);font-weight:700;font-size:18px;transition:transform .15s,color .15s}
-.hub-pill:hover .go{transform:translateX(3px);color:var(--text-1)}
+/* liquid-glass persona pill */
+.persona-pill{display:inline-flex;gap:4px;padding:5px;border-radius:99px;
+  background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,0) 100%);
+  -webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 10px 34px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(255,255,255,.04)}
+.seg{border:0;background:transparent;cursor:pointer;font-family:'Inter Tight',sans-serif;font-weight:600;font-size:14px;color:var(--text-3);
+  padding:11px 18px;border-radius:99px;transition:color .2s,background .2s,box-shadow .2s,transform .12s;white-space:nowrap;letter-spacing:-.01em}
+.seg:hover{color:var(--text-1)}
+.seg:active{transform:scale(.97)}
+.seg.active{color:#fff;background:linear-gradient(135deg,var(--aicare) 0%,var(--aims) 100%);box-shadow:0 4px 18px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.35)}
+@media(max-width:760px){.persona-pill{display:grid;grid-template-columns:1fr 1fr;gap:6px}}
+@media(max-width:560px){.seg{padding:12px 8px;font-size:13px;text-align:center}}
 
-/* product grid */
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-@media(max-width:920px){.products{grid-template-columns:1fr}}
+/* hint line under hero bar */
+.hero-hint{margin-top:16px;font-size:13.5px;color:var(--text-3);display:flex;align-items:center;gap:9px;padding-left:6px}
+.hero-hint .pulse{width:8px;height:8px;border-radius:50%;background:var(--aicare);box-shadow:0 0 0 0 rgba(6,182,212,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(6,182,212,.45)}70%{box-shadow:0 0 0 9px rgba(6,182,212,0)}100%{box-shadow:0 0 0 0 rgba(6,182,212,0)}}
 
-.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:24px;padding:36px;transition:transform .2s,border-color .2s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;min-height:380px;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.16)}
-.card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 0% 0%,var(--card-glow),transparent 50%);opacity:.12;pointer-events:none}
-.card.aims{--card-glow:var(--aims);--card-text:var(--aims-light)}
-.card.aicare{--card-glow:var(--aicare);--card-text:var(--aicare-light)}
-.card.plus{--card-glow:#9333ea;--card-text:#c4b5fd}
+/* ============= PERSONA STAGE (swaps) ============= */
+.stage{margin-top:44px;transition:opacity .2s ease,transform .2s ease}
+.stage.swapping{opacity:0;transform:translateY(6px)}
+@media(max-width:640px){.stage{margin-top:30px}}
 
-.card h3{font-size:clamp(22px,2.5vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:18px;color:var(--text-1)}
-.card h3 .who{color:var(--card-text)}
-.card .desc{color:var(--text-2);font-size:15px;line-height:1.6;margin-bottom:24px;flex:1}
-.card .learn{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;color:var(--card-text);margin-top:auto}
-.card .learn::after{content:'→';transition:transform .2s}
-.card:hover .learn::after{transform:translateX(4px)}
+.p-eyebrow{font-size:13px;letter-spacing:.18em;color:var(--accent-text);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.p-eyebrow .pip{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+.p-head{font-size:clamp(30px,5.2vw,58px);font-weight:800;line-height:1.04;letter-spacing:-.035em;max-width:18ch;margin-bottom:36px}
+@media(max-width:640px){.p-head{margin-bottom:26px}}
 
-/* ============= TRUSTED BY ============= */
-.trusted{margin-top:96px}
-.trusted-strip{margin-top:24px;padding:32px 36px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:24px;text-align:center}
-.trusted-strip p{font-size:14px;color:var(--text-3);font-weight:500;letter-spacing:.05em;margin-bottom:24px;text-transform:uppercase}
-.trusted-cats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.trusted-cat{padding:10px 18px;background:rgba(255,255,255,.04);border:1px solid var(--card-border);border-radius:99px;font-size:13px;font-weight:600;color:var(--text-2);transition:background .15s,color .15s}
-.trusted-cat:hover{background:rgba(255,255,255,.07);color:var(--text-1)}
-.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
-@media(max-width:920px){.testimonials{grid-template-columns:1fr}}
-.testimonial{padding:28px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px;display:flex;flex-direction:column;min-height:200px}
-.testimonial .quote{font-size:16px;line-height:1.55;color:var(--text-1);font-weight:500;margin-bottom:18px;flex:1}
-.testimonial .quote::before{content:'"';color:var(--aims-light);font-size:32px;font-weight:800;line-height:0;display:inline-block;vertical-align:-6px;margin-right:4px}
-.testimonial .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--card-border);padding-top:16px;margin-top:auto}
-.testimonial .who .av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--aims),var(--aicare));display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0}
-.testimonial .who .name{font-weight:700;font-size:14px;line-height:1.2}
-.testimonial .who .role{font-size:12px;color:var(--text-3);line-height:1.3;margin-top:1px}
-.testimonial.placeholder{border-style:dashed;border-color:rgba(255,255,255,.10)}
-.testimonial.placeholder .quote{color:var(--text-3);font-style:italic;font-weight:400}
-.testimonial.placeholder .quote::before{color:var(--text-3)}
+.p-body{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start}
+@media(max-width:880px){.p-body{grid-template-columns:1fr}}
 
-/* ============= INSIDE AIMS HEALTH (killer features) ============= */
-.inside{margin-top:96px}
-.inside-grid{display:grid;gap:18px;margin-top:24px}
-.inside-row{background:var(--card-bg);border:1px solid var(--card-border);border-radius:24px;padding:40px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;position:relative;overflow:hidden}
-@media(max-width:780px){.inside-row{grid-template-columns:1fr;padding:32px 28px}}
-.inside-row::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 100% at 100% 50%,var(--row-glow),transparent 60%);opacity:.18;pointer-events:none}
-.inside-row .ir-text{position:relative;z-index:1}
-.inside-row .ir-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--row-accent);margin-bottom:14px;display:inline-flex;align-items:center;gap:8px}
-.inside-row .ir-label .pip{width:8px;height:8px;border-radius:50%;background:var(--row-accent);box-shadow:0 0 12px var(--row-accent)}
-.inside-row .ir-headline{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:14px;max-width:22ch}
-.inside-row .ir-desc{font-size:16px;color:var(--text-2);line-height:1.55;max-width:54ch}
-.inside-row .ir-visual{position:relative;z-index:1;display:flex;justify-content:flex-end;align-items:center;min-height:120px}
-.inside-row .ir-art{padding:20px 22px;background:rgba(255,255,255,.04);border:1px solid var(--card-border);border-radius:16px;font-family:'Inter Tight',sans-serif;font-size:13px;color:var(--text-2);line-height:1.6;min-width:260px;backdrop-filter:blur(8px)}
-.inside-row .ir-art strong{color:var(--text-1);font-weight:600}
-.inside-row .ir-art .flow-step{display:flex;align-items:center;gap:8px;padding:3px 0}
-.inside-row .ir-art .flow-step .num{width:18px;height:18px;border-radius:50%;background:var(--row-accent);color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-.inside-row .ir-art .arrow{color:var(--text-3);font-weight:600;margin:2px 0}
-.inside-row.passport{--row-accent:#a78bfa;--row-glow:rgba(147,51,234,.18)}
-.inside-row.upload{--row-accent:var(--aims-light);--row-glow:rgba(147,51,234,.16)}
-.inside-row.autonomous{--row-accent:#67e8f9;--row-glow:rgba(6,182,212,.16)}
-.inside-row.billing{--row-accent:#fcd34d;--row-glow:rgba(252,211,77,.14)}
-.inside-row.reporting{--row-accent:#f472b6;--row-glow:rgba(244,114,182,.14)}
+/* feature grid */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.feat-grid{grid-template-columns:1fr}}
+.feat{padding:24px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.feat:hover{border-color:rgba(255,255,255,.16);transform:translateY(-2px)}
+.feat::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 90% at 0% 0%,var(--accent-soft),transparent 55%);pointer-events:none}
+.feat .ic{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px solid var(--card-border);margin-bottom:16px;color:var(--accent-text);position:relative;z-index:1}
+.feat h5{font-size:16.5px;font-weight:700;letter-spacing:-.015em;margin-bottom:7px;line-height:1.2;position:relative;z-index:1}
+.feat p{font-size:14px;color:var(--text-2);line-height:1.55;position:relative;z-index:1}
 
-/* ============= WHY AIMS HEALTH ============= */
-.why{margin-top:96px}
-.section-title{margin-bottom:32px}
-.section-title .label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--aims-light);display:block;margin-bottom:14px}
-.section-title h2{font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:12px;max-width:24ch}
-.section-title .lead{font-size:17px;color:var(--text-2);line-height:1.5;max-width:64ch}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
-@media(max-width:920px){.why-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.why-grid{grid-template-columns:1fr}}
-.why-card{padding:28px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px}
-.why-card .num{font-size:13px;font-weight:700;color:var(--aims-light);margin-bottom:10px;letter-spacing:.04em}
-.why-card h4{font-size:18px;font-weight:800;margin-bottom:8px;letter-spacing:-.015em}
-.why-card p{font-size:14px;color:var(--text-2);line-height:1.55}
+/* right rail: testimonial + visual + CTA */
+.rail{display:flex;flex-direction:column;gap:14px}
+.testimonial{padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border:1px solid var(--card-border);border-radius:20px;position:relative;overflow:hidden}
+.testimonial::before{content:'';position:absolute;inset:0;background:radial-gradient(70% 90% at 100% 0%,var(--accent-soft),transparent 60%);pointer-events:none}
+.testimonial .quote{font-size:16px;line-height:1.55;color:var(--text-1);font-weight:500;margin-bottom:18px;position:relative;z-index:1}
+.testimonial .quote::before{content:'"';color:var(--accent-text);font-size:34px;font-weight:800;line-height:0;display:inline-block;vertical-align:-7px;margin-right:5px}
+.testimonial .who{display:flex;align-items:center;gap:12px;position:relative;z-index:1}
+.testimonial .av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--aicare),var(--aims));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px}
+.testimonial .name{font-weight:700;font-size:14px;line-height:1.2}
+.testimonial .role{font-size:12.5px;color:var(--text-3);line-height:1.3;margin-top:2px}
+.testimonial .tag{position:absolute;top:18px;right:18px;font-size:10px;letter-spacing:.14em;color:var(--text-3);z-index:1;border:1px solid var(--card-border);padding:3px 8px;border-radius:99px}
 
-/* ============= TRIAL CTA ============= */
-.trial{margin-top:96px;padding:56px;background:linear-gradient(135deg,rgba(147,51,234,.10),rgba(6,182,212,.07));border:1px solid rgba(147,51,234,.20);border-radius:28px;position:relative;overflow:hidden}
-@media(max-width:640px){.trial{padding:36px 28px}}
-.trial::before{content:'';position:absolute;top:-60%;right:-10%;width:60%;height:200%;background:radial-gradient(circle,rgba(147,51,234,.15),transparent 60%);pointer-events:none}
-.trial .eyebrow{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--aims-light);margin-bottom:18px;position:relative;z-index:1}
-.trial h2{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;max-width:18ch;position:relative;z-index:1}
-.trial p{font-size:17px;color:var(--text-2);line-height:1.55;max-width:60ch;margin-bottom:28px;position:relative;z-index:1}
-.trial .trial-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;position:relative;z-index:1}
-.trial .btn-primary{padding:16px 32px;font-size:16px}
-.trial .small{font-size:13px;color:var(--text-3);line-height:1.4}
-.trial-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;position:relative;z-index:1}
-@media(max-width:780px){.trial-feats{grid-template-columns:1fr}}
-.trial-feat{display:flex;align-items:start;gap:12px;font-size:14px;color:var(--text-2);line-height:1.5}
-.trial-feat .check{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--aims),var(--pink));display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:800;margin-top:2px}
+.visual{border:1px dashed rgba(255,255,255,.13);border-radius:20px;background:var(--card-bg);min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--text-3);text-align:center;padding:24px;position:relative;overflow:hidden}
+.visual::before{content:'';position:absolute;inset:0;background:radial-gradient(70% 100% at 50% 0%,var(--accent-soft),transparent 60%);pointer-events:none}
+.visual .vlabel{font-size:13px;font-weight:600;color:var(--text-2);position:relative;z-index:1}
+.visual .vsub{font-size:11.5px;letter-spacing:.12em;position:relative;z-index:1}
 
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:99px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s,filter .15s;cursor:pointer;border:0;font-family:inherit}
-.btn-primary{background:linear-gradient(135deg,var(--aims) 0%,var(--pink) 100%);color:#fff;box-shadow:0 8px 32px rgba(147,51,234,.35)}
+.rail-cta{padding:24px;border-radius:20px;background:linear-gradient(135deg,rgba(147,51,234,.14),rgba(6,182,212,.08));border:1px solid rgba(147,51,234,.22);position:relative;overflow:hidden}
+.rail-cta h4{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.rail-cta p{font-size:13.5px;color:var(--text-2);line-height:1.5;margin-bottom:16px}
+.rail-cta .btn{width:100%;justify-content:center}
+
+/* ============= FOUNDING COHORT ============= */
+.cohort{margin-top:80px;padding:48px;border-radius:28px;background:linear-gradient(135deg,rgba(147,51,234,.12),rgba(6,182,212,.08));border:1px solid rgba(147,51,234,.22);position:relative;overflow:hidden}
+@media(max-width:640px){.cohort{margin-top:56px;padding:32px 22px;border-radius:22px}}
+.cohort::before{content:'';position:absolute;top:-60%;right:-8%;width:55%;height:200%;background:radial-gradient(circle,rgba(6,182,212,.16),transparent 60%);pointer-events:none}
+.cohort .eyebrow{font-size:12.5px;color:var(--aicare-light);margin-bottom:16px;position:relative;z-index:1}
+.cohort h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px;max-width:20ch;position:relative;z-index:1}
+.cohort p{font-size:16px;color:var(--text-2);line-height:1.55;max-width:58ch;margin-bottom:26px;position:relative;z-index:1}
+.cohort-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:30px;position:relative;z-index:1}
+@media(max-width:720px){.cohort-feats{grid-template-columns:1fr}}
+.cohort-feat{display:flex;gap:12px;font-size:14px;color:var(--text-2);line-height:1.5}
+.cohort-feat .check{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--aims),var(--pink));display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;margin-top:1px}
+.cohort-feat strong{color:var(--text-1);font-weight:600}
+.cohort .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
+.cohort .small{font-size:12.5px;color:var(--text-3);line-height:1.4;max-width:34ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:99px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s,filter .15s;cursor:pointer;border:0;font-family:inherit;color:#fff}
+.btn-primary{background:linear-gradient(135deg,var(--aims) 0%,var(--pink) 100%);box-shadow:0 8px 30px rgba(147,51,234,.34)}
 .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btn-ghost{background:transparent;color:var(--text-1);border:1px solid var(--card-border)}
-.btn-ghost:hover{background:var(--card-bg)}
 
-/* pricing strip */
-.pricing{margin-top:96px;padding:48px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:24px}
-@media(max-width:640px){.pricing{padding:32px 24px}}
-.pricing h2{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
-.pricing .pricing-sub{color:var(--text-2);font-size:15px;margin-bottom:32px}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-@media(max-width:780px){.pricing-grid{grid-template-columns:1fr}}
-.price-col{padding-right:24px;border-right:1px solid var(--card-border)}
-.price-col:last-child{border-right:0;padding-right:0}
-@media(max-width:780px){.price-col{border-right:0;border-bottom:1px solid var(--card-border);padding-bottom:24px;padding-right:0}.price-col:last-child{border-bottom:0;padding-bottom:0}}
-.price-col h4{font-size:14px;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px;display:flex;align-items:center;gap:8px}
-.price-col h4 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.price-col.aims-col h4 .dot{background:var(--aims)}
-.price-col.aicare-col h4 .dot{background:var(--aicare)}
-.price-col.plus-col h4 .dot{background:linear-gradient(135deg,var(--aims),var(--aicare))}
-.tier{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.tier:last-child{border-bottom:0}
-.tier-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
-.tier .name{font-size:15px;font-weight:700;color:var(--text-1)}
-.tier .amount{font-size:18px;font-weight:700;letter-spacing:-.02em;white-space:nowrap}
-.tier .amount .per{font-size:11px;font-weight:500;color:var(--text-3);margin-left:2px}
-.tier .descr{font-size:12px;color:var(--text-3);line-height:1.4;font-weight:500}
-
-/* deep dive sections */
-.section{margin-top:96px;padding-top:64px;border-top:1px solid var(--card-border)}
-.section .label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:14px;color:var(--section-accent)}
-.section h2{font-size:clamp(28px,3.5vw,46px);font-weight:800;letter-spacing:-.025em;margin-bottom:10px;line-height:1.1}
-.section.aims-deep{--section-accent:var(--aims-light)}
-.section.aicare-deep{--section-accent:var(--aicare-light)}
-.section.plus-deep{--section-accent:#c4b5fd}
-.section .lead{font-size:18px;color:var(--text-2);max-width:64ch;line-height:1.55;margin-bottom:32px}
-.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:24px}
-@media(max-width:680px){.feature-grid{grid-template-columns:1fr}}
-.feature{padding:24px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px}
-.feature h5{font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
-.feature p{font-size:14px;color:var(--text-2);line-height:1.5}
-.replaces{margin-top:32px;padding:20px 24px;background:rgba(255,255,255,.025);border-radius:12px;font-size:14px;color:var(--text-2);line-height:1.6}
-.replaces strong{color:var(--text-1);font-weight:700}
-
-/* footer */
-footer{margin-top:120px;padding-top:48px;border-top:1px solid var(--card-border);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
-@media(max-width:780px){footer{grid-template-columns:1fr 1fr}}
-footer h6{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;color:var(--text-1)}
-footer .col p, footer .col a{color:var(--text-3);font-size:14px;line-height:1.7;display:block;text-decoration:none}
+/* ============= FOOTER ============= */
+footer{margin-top:96px;padding-top:44px;border-top:1px solid var(--card-border);display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px}
+@media(max-width:680px){footer{grid-template-columns:1fr;gap:32px}}
+footer h6{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px;color:var(--text-2)}
+footer .col p,footer .col a{color:var(--text-3);font-size:14px;line-height:1.75;display:block;text-decoration:none}
 footer .col a:hover{color:var(--text-1)}
-footer .col.brand-col{padding-right:32px}
-footer .col.brand-col p{color:var(--text-3);font-size:14px;line-height:1.6;margin-top:8px}
-footer .legal{grid-column:1/-1;margin-top:48px;padding-top:24px;border-top:1px solid var(--card-border);font-size:12px;color:var(--text-3);display:flex;justify-content:space-between}
-@media(max-width:560px){footer .legal{flex-direction:column;gap:8px}}
+footer .brand-col p{margin-top:14px;max-width:38ch;line-height:1.6}
+.socials{display:flex;gap:10px;margin-top:18px}
+.social-chip{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-2);transition:color .15s,border-color .15s,transform .15s}
+.social-chip:hover{color:var(--text-1);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+.social-chip svg{width:19px;height:19px}
+.secondary-ig{font-size:12.5px;color:var(--text-3);margin-top:12px}
+.secondary-ig a{display:inline;color:var(--aicare-light)}
+footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px solid var(--card-border);font-size:12px;color:var(--text-3);display:flex;justify-content:space-between;gap:12px}
+@media(max-width:560px){footer .legal{flex-direction:column;gap:6px}}
 
-/* === wave halo (animated glow around the hero AiMS Health lockup) === */
-.hero-mark{display:inline-flex;align-items:center;gap:18px;margin-bottom:32px;position:relative}
-.hero-mark::before{content:'';position:absolute;inset:-30px -40px;background:radial-gradient(60% 80% at 20% 50%,rgba(6,182,212,.20),transparent 70%),radial-gradient(60% 80% at 50% 50%,rgba(147,51,234,.18),transparent 70%),radial-gradient(60% 80% at 80% 50%,rgba(236,72,153,.16),transparent 70%);filter:blur(8px);animation:halo 7s linear infinite;pointer-events:none;z-index:-1}
-@keyframes halo{
-  0%{transform:translateX(0)}
-  50%{transform:translateX(15px)}
-  100%{transform:translateX(0)}
-}
-.hero-mark .lockup .wave{width:64px}
-.hero-mark .lockup .word{font-size:34px;letter-spacing:-.03em}
+/* ============= TRIAL MODAL ============= */
+.modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(4,4,8,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding:48px 18px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{width:100%;max-width:520px;background:linear-gradient(180deg,#0c0c14,#08080e);border:1px solid rgba(255,255,255,.1);border-radius:26px;padding:34px;position:relative;box-shadow:0 30px 90px rgba(0,0,0,.6);animation:modalIn .26s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+@media(max-width:560px){.modal{padding:26px 20px;border-radius:22px}.modal-overlay{padding:20px 12px}}
+.modal .close{position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;border:1px solid var(--card-border);background:var(--card-bg);color:var(--text-2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:color .15s,border-color .15s}
+.modal .close:hover{color:var(--text-1);border-color:rgba(255,255,255,.2)}
+.modal .eyebrow{font-size:12px;color:var(--aicare-light);margin-bottom:10px}
+.modal h3{font-size:24px;font-weight:800;letter-spacing:-.025em;margin-bottom:6px}
+.modal .lead{font-size:14px;color:var(--text-2);line-height:1.5;margin-bottom:24px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--text-2);margin-bottom:7px}
+.field label .opt{color:var(--text-3);font-weight:400}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,.04);border:1px solid var(--card-border);border-radius:12px;color:var(--text-1);font-family:inherit;font-size:15px;transition:border-color .15s,background .15s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--aims);background:rgba(255,255,255,.06)}
+.field textarea{resize:vertical;min-height:88px;line-height:1.5}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.modal .submit{width:100%;justify-content:center;margin-top:8px}
+.modal .submit[disabled]{opacity:.6;cursor:default}
+.form-msg{margin-top:14px;padding:14px 16px;border-radius:12px;font-size:14px;line-height:1.5;display:none}
+.form-msg.show{display:block}
+.form-msg.ok{background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.3);color:var(--aicare-light)}
+.form-msg.err{background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.3);color:#fbb6d6}
+.form-msg a{color:#fff;font-weight:600}
+.modal .modal-success{text-align:center;padding:24px 8px}
+.modal .modal-success .big{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--aicare),var(--aims));display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:#fff}
+.modal .modal-success h3{margin-bottom:8px}
+.modal .modal-success p{font-size:15px;color:var(--text-2);line-height:1.55}
+.hidden{display:none !important}
 </style>
 </head>
 <body>
 
-<!-- shared SVG defs (used by wave gradients across the page) -->
+<!-- shared SVG defs (wave gradients) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- animated palindrome gradient for AiMS Health marketing-hero wave -->
     <linearGradient id="waveHealthAnim" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#06b6d4">
-        <animate attributeName="stop-color" values="#06b6d4;#9333ea;#ec4899;#9333ea;#06b6d4" dur="7s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" stop-color="#9333ea">
-        <animate attributeName="stop-color" values="#9333ea;#ec4899;#06b6d4;#9333ea;#9333ea" dur="7s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#ec4899">
-        <animate attributeName="stop-color" values="#ec4899;#9333ea;#06b6d4;#ec4899;#ec4899" dur="7s" repeatCount="indefinite"/>
-      </stop>
+      <stop offset="0%" stop-color="#06b6d4"><animate attributeName="stop-color" values="#06b6d4;#9333ea;#ec4899;#9333ea;#06b6d4" dur="7s" repeatCount="indefinite"/></stop>
+      <stop offset="50%" stop-color="#9333ea"><animate attributeName="stop-color" values="#9333ea;#ec4899;#06b6d4;#9333ea;#9333ea" dur="7s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#ec4899"><animate attributeName="stop-color" values="#ec4899;#9333ea;#06b6d4;#ec4899;#ec4899" dur="7s" repeatCount="indefinite"/></stop>
     </linearGradient>
     <linearGradient id="waveHealth" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#06b6d4"/>
-      <stop offset="50%" stop-color="#9333ea"/>
-      <stop offset="100%" stop-color="#ec4899"/>
-    </linearGradient>
-    <linearGradient id="waveAims" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#5b21b6"/>
-      <stop offset="50%" stop-color="#9333ea"/>
-      <stop offset="100%" stop-color="#ec4899"/>
-    </linearGradient>
-    <linearGradient id="waveAicare" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#155e75"/>
-      <stop offset="50%" stop-color="#06b6d4"/>
-      <stop offset="100%" stop-color="#a5f3fc"/>
-    </linearGradient>
-    <linearGradient id="wavePlus" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#5b21b6"/>
-      <stop offset="50%" stop-color="#9333ea"/>
-      <stop offset="100%" stop-color="#06b6d4"/>
+      <stop offset="0%" stop-color="#06b6d4"/><stop offset="50%" stop-color="#9333ea"/><stop offset="100%" stop-color="#ec4899"/>
     </linearGradient>
   </defs>
 </svg>
@@ -291,366 +217,45 @@ footer .legal{grid-column:1/-1;margin-top:48px;padding-top:24px;border-top:1px s
       <svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true">
         <path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveHealthAnim)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
       </svg>
-      <span class="word"><span class="ai">Ai</span><span class="brand-half" style="-webkit-text-stroke-color:var(--aims)">MS Health</span></span>
+      <span class="word"><span class="ai">Ai</span><span class="brand-half">MS Health</span></span>
     </a>
-    <div class="nav-links">
-      <a href="#aims">AiMS</a>
-      <a href="#aicare">AiCare</a>
-      <a href="#plus">AiMS Plus</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#trial" class="nav-cta">Apply for trial</a>
-    </div>
+    <button class="nav-cta" data-open-modal>Apply for trial</button>
   </nav>
 
-  <section class="hero">
-    <div class="hero-mark">
-      <a class="lockup health" href="#" aria-label="AiMS Health">
-        <svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true">
-          <path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveHealthAnim)" stroke-width="3.4" stroke-linecap="round" fill="none"/>
-        </svg>
-        <span class="word"><span class="ai">Ai</span><span class="brand-half" style="-webkit-text-stroke-color:var(--aims)">MS Health</span></span>
-      </a>
-    </div>
-    <div class="eyebrow">One platform · Three modules · Built for performance teams</div>
-    <h1><span class="a1">Athlete management.</span><br><span class="a2">Clinical practice.</span><br><span class="a3">One platform.</span></h1>
-    <p class="sub">AiMS Health is built by a strength coach for the way performance teams actually work. Three modules — pick one or two. They run together when you do.</p>
-
-    <div class="hero-hub">
-      <a class="hub-pill aims" href="#aims">
-        <span class="dot"></span>
-        <span class="label">
-          <span class="name">AiMS</span>
-          <span class="tag">For strength &amp; conditioning coaches</span>
-        </span>
-        <span class="go">→</span>
-      </a>
-      <a class="hub-pill aicare" href="#aicare">
-        <span class="dot"></span>
-        <span class="label">
-          <span class="name">AiCare</span>
-          <span class="tag">For physios &amp; clinic owners</span>
-        </span>
-        <span class="go">→</span>
-      </a>
-      <a class="hub-pill plus" href="#plus">
-        <span class="dot"></span>
-        <span class="label">
-          <span class="name">AiMS Plus</span>
-          <span class="tag">For facilities running both</span>
-        </span>
-        <span class="go">→</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="products" id="products">
-
-    <a class="card aims" href="#aims">
-      <span class="lockup aims" aria-label="AiMS">
-        <svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true">
-          <path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveAims)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-        </svg>
-        <span class="word"><span class="ai">Ai</span><span class="brand-half">MS</span></span>
-      </span>
-      <h3>The intelligent <span class="who">athlete management system</span> for strength &amp; conditioning coaches.</h3>
-      <div class="desc">Build programs. Run sessions. Log sets. Track testing. Coach desktop to athlete phone in one app. Designed for the gym floor, built to think with you.</div>
-      <span class="learn">See AiMS in detail</span>
+  <!-- HERO: logo lockup + liquid-glass persona pill -->
+  <section class="hero-bar">
+    <a class="lockup health" href="#" aria-label="AiMS Health">
+      <svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true">
+        <path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveHealthAnim)" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="word"><span class="ai">Ai</span><span class="brand-half">MS Health</span></span>
     </a>
-
-    <a class="card aicare" href="#aicare">
-      <span class="lockup aicare" aria-label="AiCare">
-        <svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true">
-          <path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveAicare)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-        </svg>
-        <span class="word"><span class="ai">Ai</span><span class="brand-half">Care</span></span>
-      </span>
-      <h3>The most efficient <span class="who">clinic manager</span> for physios &amp; clinic owners.</h3>
-      <div class="desc">Bookings. SOAP notes. Telehealth. Tyro billing. Body charts. Everything Cliniko or Nookal does — faster, integrated, AHPRA-compliant from the ground up.</div>
-      <span class="learn">See AiCare in detail</span>
-    </a>
-
-    <a class="card plus" href="#plus">
-      <span class="lockup plus" aria-label="AiMS Plus">
-        <svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true">
-          <path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#wavePlus)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-        </svg>
-        <span class="word"><span class="ai">Ai</span><span class="brand-half">MS+</span></span>
-      </span>
-      <h3>The complete <span class="who">performance + clinical platform</span> for facilities running both.</h3>
-      <div class="desc">AiMS and AiCare, working as one. Coach sees physio constraints. Physio sees coach load. Athlete sees what matters. Closed-loop everything.</div>
-      <span class="learn">See AiMS Plus in detail</span>
-    </a>
-
-  </section>
-
-  <!-- ============= INSIDE AIMS HEALTH (killer features) ============= -->
-  <section class="inside">
-    <div class="section-title">
-      <span class="label">Inside AiMS Health</span>
-      <h2>Five things you've been wishing for, finally in one place.</h2>
-      <p class="lead">The features that nobody else has bundled. The "wait, it does that?" moments that turn a comparison into a decision.</p>
-    </div>
-
-    <div class="inside-grid">
-
-      <div class="inside-row passport">
-        <div class="ir-text">
-          <span class="ir-label"><span class="pip"></span>Athlete Passport</span>
-          <h3 class="ir-headline">One athlete record that travels with them — across coaches, physios, clinics, and seasons.</h3>
-          <p class="ir-desc">Shared programming, shared performance history, shared clinical context. The athlete moves between coaches at your facility (or between facilities entirely) without losing their record. AHPRA tier-gating decides who sees what, automatically. The athlete owns their data; the right people see what they need to.</p>
-        </div>
-        <div class="ir-visual">
-          <div class="ir-art">
-            <div class="flow-step"><span class="num">1</span><strong>Coach A</strong> writes program</div>
-            <div class="arrow">↓ shared via passport</div>
-            <div class="flow-step"><span class="num">2</span><strong>Physio</strong> sets constraints</div>
-            <div class="arrow">↓</div>
-            <div class="flow-step"><span class="num">3</span><strong>Coach B</strong> picks up next block</div>
-            <div class="arrow">↓</div>
-            <div class="flow-step"><span class="num">4</span>Athlete owns the record</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="inside-row upload">
-        <div class="ir-text">
-          <span class="ir-label"><span class="pip"></span>Anything upload</span>
-          <h3 class="ir-headline">Drag in a PDF, a photo, a screenshot, a spreadsheet — and watch it become a live program.</h3>
-          <p class="ir-desc">Got a TeamBuildr export? A photo of a whiteboard? A coach's PDF from a former gym? A spreadsheet from a parent? Drop it into AiMS. The platform reads it, structures it, and stages it as an editable program. Review, tweak, publish. Migrating decades of programming becomes a one-minute drag-and-drop.</p>
-        </div>
-        <div class="ir-visual">
-          <div class="ir-art">
-            <div class="flow-step"><span class="num">📄</span>PDF / image / sheet / scribble</div>
-            <div class="arrow">↓ AiMS Health parses</div>
-            <div class="flow-step"><span class="num">🔍</span>Exercises mapped to library</div>
-            <div class="arrow">↓ Schemes recognised</div>
-            <div class="flow-step"><span class="num">📋</span>Staged as editable program</div>
-            <div class="arrow">↓ One review pass</div>
-            <div class="flow-step"><span class="num">✓</span>Live for the athlete</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="inside-row autonomous">
-        <div class="ir-text">
-          <span class="ir-label"><span class="pip"></span>Autonomous programming · checked by you</span>
-          <h3 class="ir-headline">The platform drafts. VBT tunes the load. Physio gates the constraints. You approve. The loop closes.</h3>
-          <p class="ir-desc">AiMS Health proposes next week's program based on the last four. VBT data from the bar adjusts load in real time. Wellness gates the volume. Physio constraints automatically block contraindicated movements. The coach reviews, modifies, approves — and the program ships to the athlete with everyone aligned. You stay in control. The work that used to take Sunday night is now a 10-minute check.</p>
-        </div>
-        <div class="ir-visual">
-          <div class="ir-art">
-            <div class="flow-step"><span class="num">A</span>AI drafts week</div>
-            <div class="arrow">↓</div>
-            <div class="flow-step"><span class="num">V</span>VBT tunes load live</div>
-            <div class="arrow">↓</div>
-            <div class="flow-step"><span class="num">P</span>Physio gates movements</div>
-            <div class="arrow">↓</div>
-            <div class="flow-step"><span class="num">C</span>Coach reviews + approves</div>
-            <div class="arrow">↓</div>
-            <div class="flow-step"><span class="num">✓</span>Live to athlete</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="inside-row billing">
-        <div class="ir-text">
-          <span class="ir-label"><span class="pip"></span>Memberships + billing + private health · one stack</span>
-          <h3 class="ir-headline">Stop running three systems for memberships, clinical billing, and private health rebates.</h3>
-          <p class="ir-desc">Recurring memberships, casual visit packs, clinical consults, Medicare gap, private health rebates, Tyro tap-and-go, Halth payment plans, Stripe Connect — all on one workflow, one set of books. One athlete invoice covers their training subscription, their physio visit, and the gap they owe Medicare. One accountant export at year-end.</p>
-        </div>
-        <div class="ir-visual">
-          <div class="ir-art">
-            <div class="flow-step"><span class="num">$</span>Membership · recurring</div>
-            <div class="flow-step"><span class="num">$</span>Clinical visit · Tyro</div>
-            <div class="flow-step"><span class="num">$</span>Medicare gap · auto</div>
-            <div class="flow-step"><span class="num">$</span>Private health rebate</div>
-            <div class="arrow">↓ one invoice</div>
-            <div class="flow-step"><span class="num">📊</span>One accountant export</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="inside-row reporting">
-        <div class="ir-text">
-          <span class="ir-label"><span class="pip"></span>Reporting + business management · built in</span>
-          <h3 class="ir-headline">Revenue, retention, athlete progress, practitioner utilisation — already on your dashboard.</h3>
-          <p class="ir-desc">Tenant-owner views with everything you'd otherwise stitch together from Xero, your coaching tool, your clinic software, and a spreadsheet. MRR, churn risk per athlete, top-performing programs, practitioner billable hours, AHPRA audit trail, BAS-ready exports. Run the business from inside AiMS Health instead of around it.</p>
-        </div>
-        <div class="ir-visual">
-          <div class="ir-art">
-            <div class="flow-step"><span class="num">📈</span>MRR · churn risk · LTV</div>
-            <div class="flow-step"><span class="num">👥</span>Athlete progress at a glance</div>
-            <div class="flow-step"><span class="num">⏱</span>Practitioner utilisation</div>
-            <div class="flow-step"><span class="num">📜</span>AHPRA audit trail</div>
-            <div class="flow-step"><span class="num">📤</span>BAS-ready export</div>
-          </div>
-        </div>
-      </div>
-
+    <div class="persona-pill" role="tablist" aria-label="Choose your role">
+      <button class="seg active" data-persona="athlete" role="tab" aria-selected="true">Athlete</button>
+      <button class="seg" data-persona="sc" role="tab" aria-selected="false">S&amp;C</button>
+      <button class="seg" data-persona="coach" role="tab" aria-selected="false">Head Coach</button>
+      <button class="seg" data-persona="allied" role="tab" aria-selected="false">Allied Health</button>
     </div>
   </section>
+  <div class="hero-hint"><span class="pulse"></span>Pick your role — the page rebuilds itself around you.</div>
 
-  <!-- ============= WHY AIMS HEALTH ============= -->
-  <section class="why">
-    <div class="section-title">
-      <span class="label">Why AiMS Health</span>
-      <h2>The difference is the loop.</h2>
-      <p class="lead">Everyone has a programming app or a clinic app. We're the only one built so they share data on purpose — and the only one built by a coach who's actually run a performance facility.</p>
-    </div>
-    <div class="why-grid">
+  <!-- PERSONA STAGE (rendered + swapped by JS) -->
+  <main class="stage" id="stage" aria-live="polite"></main>
 
-      <div class="why-card">
-        <div class="num">01</div>
-        <h4>Built by a coach</h4>
-        <p>Not engineers guessing. Designed against ten years of running RAD Centre — every workflow has been live-tested with real athletes and real physios first.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="num">02</div>
-        <h4>AHPRA tier-gated</h4>
-        <p>Athletes see what they should see. Coaches see what physios approve. Clinical data stays clinical-tier by default. Compliance baked in, not bolted on.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="num">03</div>
-        <h4>Multi-rail payments</h4>
-        <p>Stripe + Tyro + Halth. Pick the rail that fits your facility. No payment provider lock-in. Memberships, casual visits, telehealth, gap billing — one workflow.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="num">04</div>
-        <h4>Voice + gym-floor first</h4>
-        <p>"Set 3 done, RPE 7" — done. Hands-free logging, between-set rest timers, RPE that auto-suggests from your history. Made for in-bed and on-the-floor, not for the desk.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="num">05</div>
-        <h4>Closed-loop data</h4>
-        <p>Wellness drives prescription. Prescription drives load. Load drives recovery. Recovery drives bookings. Other apps stop at "logging." We close the loop.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="num">06</div>
-        <h4>Crafted in Ballarat</h4>
-        <p>AHPRA-aware, AU-hosted, Medicare-friendly, Tyro-integrated. Built and supported from regional Victoria. Your data stays in Australia.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============= TRIAL CTA ============= -->
-  <section class="trial" id="trial">
+  <!-- FOUNDING COHORT -->
+  <section class="cohort">
     <div class="eyebrow">Founding cohort · Application-gated</div>
-    <h2>30-day white-glove trial. Free. Full-featured.</h2>
-    <p>We're onboarding ~5 facilities a month through founding cohort. Every tenant gets direct setup support from Tim, full data migration from your existing tools (TeamBuildr, Cliniko, etc.), and 30 days of the full platform — no feature gating, no credit card required.</p>
-
-    <div class="trial-feats">
-      <div class="trial-feat"><span class="check">✓</span><span><strong style="color:var(--text-1);font-weight:600">Direct founder onboarding.</strong> Tim sets up your tenant himself, walks your coaches and physios through the workflow.</span></div>
-      <div class="trial-feat"><span class="check">✓</span><span><strong style="color:var(--text-1);font-weight:600">Full data migration.</strong> Your programs, athletes, clinical notes brought across. No re-keying.</span></div>
-      <div class="trial-feat"><span class="check">✓</span><span><strong style="color:var(--text-1);font-weight:600">30 days, full platform.</strong> Every feature unlocked. No credit card. No surprise charges.</span></div>
+    <h2>30 days. Full platform. Free.</h2>
+    <p>We onboard a small number of facilities each month. Every founding tenant gets direct setup from Tim, full migration of your existing data, and 30 days of the complete platform — no feature gating, no credit card.</p>
+    <div class="cohort-feats">
+      <div class="cohort-feat"><span class="check">✓</span><span><strong>Direct founder onboarding.</strong> Tim sets up your tenant and walks your team through it.</span></div>
+      <div class="cohort-feat"><span class="check">✓</span><span><strong>Full data migration.</strong> Your programs, athletes and notes brought across — no re-keying.</span></div>
+      <div class="cohort-feat"><span class="check">✓</span><span><strong>30 days, everything unlocked.</strong> Every feature. No card. No surprise charges.</span></div>
     </div>
-
-    <div class="trial-row" style="margin-top:32px">
-      <a href="mailto:tim@aimshealth.com.au?subject=Founding%20cohort%20application" class="btn btn-primary">Apply now →</a>
-      <span class="small">Applications reviewed weekly. Founding cohort closes once we reach 50 tenants.</span>
+    <div class="row">
+      <button class="btn btn-primary" data-open-modal>Apply for trial →</button>
+      <span class="small">Applications reviewed weekly. Founding cohort closes once it fills.</span>
     </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <h2>Penetration pricing — locked through founding cohort</h2>
-    <p class="pricing-sub">Top tier is the ceiling. Pro teams never pay more.</p>
-    <div class="pricing-grid">
-
-      <div class="price-col aims-col">
-        <h4><span class="dot"></span>AiMS</h4>
-        <div class="tier">
-          <div class="tier-head"><span class="name">Solo</span><span class="amount">$49<span class="per">/mo</span></span></div>
-          <div class="descr">1 coach · up to 20 athletes · core programming + athlete app</div>
-        </div>
-        <div class="tier">
-          <div class="tier-head"><span class="name">Boutique</span><span class="amount">$249<span class="per">/mo</span></span></div>
-          <div class="descr">2–5 coaches · up to 100 athletes · squad views + leaderboard + memberships</div>
-        </div>
-        <div class="tier">
-          <div class="tier-head"><span class="name">Performance</span><span class="amount">$499<span class="per">/mo</span></span></div>
-          <div class="descr">Unlimited coaches + athletes · force plate / VBT integrations · advanced load monitoring</div>
-        </div>
-      </div>
-
-      <div class="price-col aicare-col">
-        <h4><span class="dot"></span>AiCare</h4>
-        <div class="tier">
-          <div class="tier-head"><span class="name">Boutique</span><span class="amount">$249<span class="per">/mo</span></span></div>
-          <div class="descr">1–3 practitioners · bookings + SOAP + Tyro billing + telehealth</div>
-        </div>
-        <div class="tier">
-          <div class="tier-head"><span class="name">Performance</span><span class="amount">$349<span class="per">/mo</span></span></div>
-          <div class="descr">Unlimited practitioners · multi-clinic · advanced workflow + Medicare/NDIS</div>
-        </div>
-      </div>
-
-      <div class="price-col plus-col">
-        <h4><span class="dot"></span>AiMS Plus</h4>
-        <div class="tier">
-          <div class="tier-head"><span class="name">Boutique</span><span class="amount">$499<span class="per">/mo</span></span></div>
-          <div class="descr">Boutique AiMS + Boutique AiCare · closed-loop · one billing account</div>
-        </div>
-        <div class="tier">
-          <div class="tier-head"><span class="name">Performance</span><span class="amount">$799<span class="per">/mo</span></span></div>
-          <div class="descr">Performance AiMS + Performance AiCare · unlimited everything · cross-module dashboards</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section aims-deep" id="aims">
-    <span class="label">AiMS · The intelligent athlete management system</span>
-    <h2>Programming and athlete management, end to end.</h2>
-    <p class="lead">From periodised mesocycles down to the set an athlete logs on the gym floor. AiMS is built by an S&amp;C coach for the way coaching actually works — fast, voice-friendly, gym-floor first.</p>
-    <div class="feature-grid">
-      <div class="feature"><h5>Program Studio</h5><p>Drag-drop mesocycles, supersets, schemes. AI-assist suggests progression. Voice-author exercises hands-free.</p></div>
-      <div class="feature"><h5>Athlete app (Swipe / List / Flow)</h5><p>Three render modes for three contexts. RPE auto-suggest. Rest timer auto-start. Wellness carry-forward. Set logging persists across devices.</p></div>
-      <div class="feature"><h5>Testing &amp; analytics</h5><p>Force plate (Hawkin), VBT, sprint, jump. Sparkline trends on athlete home. Auto-pulled from session.</p></div>
-      <div class="feature"><h5>Bookings &amp; scheduling</h5><p>Athlete books, coach sees within 2 seconds. Cross-device live sync. No reload required.</p></div>
-      <div class="feature"><h5>Squad &amp; leaderboard</h5><p>Coach views the whole squad at a glance. Top lifts, attendance streaks, wellness flags — one screen.</p></div>
-      <div class="feature"><h5>Memberships &amp; payments</h5><p>Recurring billing, attendance limits, casual visit packs. Stripe + Tyro + Halth — pick your rail.</p></div>
-      <div class="feature"><h5>Mobility &amp; recovery</h5><p>Generated mobility flows from today's plan. Remembered tweaks. Cool-down libraries.</p></div>
-      <div class="feature"><h5>Voice on the gym floor</h5><p>"Set 3 done, RPE 7" — done. Hands-free logging between sets. Browser-native, AirPods-ready.</p></div>
-    </div>
-    <div class="replaces"><strong>Replaces:</strong> TeamBuildr, Gym Master, Coach Me Plus, Smartabase, Lumin — plus the clipboard and spreadsheets you still keep around.</div>
-  </section>
-
-  <section class="section aicare-deep" id="aicare">
-    <span class="label">AiCare · The most efficient clinic manager</span>
-    <h2>Clinical practice management, built for performance teams.</h2>
-    <p class="lead">Bookings, notes, telehealth, billing — and an AHPRA-compliant view that lets you share the right level of athlete information with the right person, automatically. Fewer clicks, more clinical work done.</p>
-    <div class="feature-grid">
-      <div class="feature"><h5>SOAP &amp; clinical notes</h5><p>Body chart, structured templates, voice dictation. Notes auto-route to athlete record and (with consent) to coach summary.</p></div>
-      <div class="feature"><h5>Bookings &amp; telehealth</h5><p>Public booking page, practitioner availability, telehealth video, no third-party tooling.</p></div>
-      <div class="feature"><h5>Tyro billing integrated</h5><p>Tap-and-go terminal integration. Medicare, private health, gap billing. Receipts to email.</p></div>
-      <div class="feature"><h5>AHPRA tier-gated sharing</h5><p>Athletes see what they should see. Coaches see what physios approve. Notes stay clinical-tier by default.</p></div>
-      <div class="feature"><h5>Treatment plans &amp; HEP</h5><p>Home exercise programs prescribed inside the same record. Athlete sees them in their app, not in a separate tool.</p></div>
-      <div class="feature"><h5>Intake forms &amp; consent</h5><p>Digital intake, signed consent, waivers. No more paper packets at first visit.</p></div>
-      <div class="feature"><h5>Multi-clinic ready</h5><p>One owner, multiple practice locations, separate practitioner availability per site.</p></div>
-      <div class="feature"><h5>Reporting &amp; audit trail</h5><p>Every note has version history. Practice-owner dashboards. Compliance-friendly out of the box.</p></div>
-    </div>
-    <div class="replaces"><strong>Replaces:</strong> Cliniko, Nookal, Power Diary, Halaxy — same job, integrated with how your performance team actually works.</div>
-  </section>
-
-  <section class="section plus-deep" id="plus">
-    <span class="label">AiMS Plus · The complete performance + clinical platform</span>
-    <h2>The closed loop. Coach + physio + athlete, one platform.</h2>
-    <p class="lead">When AiMS and AiCare run together, the data closes the loop. Coach load shows up on the physio's screen. Physio constraints automatically gate the coach's program. Athletes only see what they should see.</p>
-    <div class="feature-grid">
-      <div class="feature"><h5>Athlete brief / parameters</h5><p>Must do, must avoid, should do, should avoid — written once, surfaced everywhere. Physio sets it, coach respects it, athlete sees the summary.</p></div>
-      <div class="feature"><h5>Cross-module dashboards</h5><p>Coach sees rehab progress without seeing notes. Physio sees ACWR without leaving AiCare. One athlete, one record.</p></div>
-      <div class="feature"><h5>Telehealth + on-floor handoff</h5><p>Physio runs telehealth, AHPRA-safe handoff to coach. No re-keying, no missed information.</p></div>
-      <div class="feature"><h5>One billing account</h5><p>Memberships, clinical visits, telehealth — one Stripe / Tyro / Halth account. One invoice for the athlete, one set of books for you.</p></div>
-      <div class="feature"><h5>Unified athlete record</h5><p>Programming, sessions, clinical notes, body chart, testing, billing — all on one timeline. Nothing lives in two places.</p></div>
-      <div class="feature"><h5>Closed-loop everything</h5><p>Wellness drives prescription. Prescription drives load. Load drives recovery. Recovery drives bookings. The loop is the moat.</p></div>
-    </div>
-    <div class="replaces"><strong>Replaces:</strong> The combination of any of the above plus the email threads, spreadsheets, and verbal handoffs you currently use to bridge them.</div>
   </section>
 
   <footer>
@@ -661,34 +266,265 @@ footer .legal{grid-column:1/-1;margin-top:48px;padding-top:24px;border-top:1px s
         </svg>
         <span class="word"><span class="ai">Ai</span><span class="brand-half">MS Health</span></span>
       </a>
-      <p>Built by a coach for coaches and clinicians. Crafted in Ballarat, AHPRA-compliant, hosted in Australia.</p>
+      <p>One platform for the whole performance team. Built by a coach, AHPRA-compliant, hosted in Australia.</p>
+      <div class="socials">
+        <a class="social-chip" href="https://instagram.com/aimshealth_au" target="_blank" rel="noopener" aria-label="AiMS Health on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="social-chip" href="https://linkedin.com/company/aims-health" target="_blank" rel="noopener" aria-label="AiMS Health on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-12h4v1.5a4 4 0 0 1 2-1.5z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a class="social-chip" href="mailto:tim@aimshealth.com.au" aria-label="Email AiMS Health">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </a>
+      </div>
+      <p class="secondary-ig">Our clinical brand: <a href="https://instagram.com/aicare_au" target="_blank" rel="noopener">@aicare_au</a></p>
     </div>
     <div class="col">
-      <h6>Product</h6>
-      <a href="#aims">AiMS</a>
-      <a href="#aicare">AiCare</a>
-      <a href="#plus">AiMS Plus</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#trial">Apply for trial</a>
+      <h6>Platform</h6>
+      <a href="#" data-persona-link="athlete">For athletes</a>
+      <a href="#" data-persona-link="sc">For S&amp;C coaches</a>
+      <a href="#" data-persona-link="coach">For head coaches</a>
+      <a href="#" data-persona-link="allied">For allied health</a>
     </div>
     <div class="col">
-      <h6>Company</h6>
-      <a href="mailto:tim@aimshealth.com.au">Contact</a>
-      <a href="#">About</a>
-      <a href="#">Founder story</a>
-    </div>
-    <div class="col">
-      <h6>Resources</h6>
-      <a href="#trial">Founding cohort</a>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
+      <h6>Get started</h6>
+      <a href="#" data-open-modal>Apply for trial</a>
+      <a href="mailto:tim@aimshealth.com.au">tim@aimshealth.com.au</a>
+      <a href="https://linkedin.com/company/aims-health" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://instagram.com/aimshealth_au" target="_blank" rel="noopener">Instagram</a>
     </div>
     <div class="legal">
       <span>© 2026 AiMS Health Pty Ltd. All rights reserved.</span>
-      <span>Powered by AiMS Health · Crafted in Ballarat, Australia</span>
+      <span>Built by a coach · Crafted in Ballarat, Australia</span>
     </div>
   </footer>
 
 </div>
+
+<!-- TRIAL MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="close" data-close-modal aria-label="Close">×</button>
+    <div id="modal-form-wrap">
+      <div class="eyebrow">Founding cohort · Application</div>
+      <h3 id="modal-title">Apply for your 30-day trial</h3>
+      <p class="lead">Tell us a little about your setup. Tim reviews every application personally.</p>
+      <form id="trial-form" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-role">Your role</label>
+          <select id="f-role" name="role" required>
+            <option value="Athlete">Athlete</option>
+            <option value="S&C / Performance Manager">S&amp;C / Performance Manager</option>
+            <option value="Head Coach">Head Coach</option>
+            <option value="Allied Health Professional">Allied Health Professional</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-org">Organisation</label>
+          <input id="f-org" name="organisation" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-msg">Tell us what you're using now — and what's frustrating</label>
+          <textarea id="f-msg" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary submit" id="submit-btn">Submit application →</button>
+        <div class="form-msg" id="form-msg"></div>
+      </form>
+    </div>
+    <div class="modal-success hidden" id="modal-success">
+      <div class="big"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h3>Got it.</h3>
+      <p>Tim will be in touch within 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ---------- persona content ----------
+  var PERSONAS = {
+    athlete: {
+      label:'Athlete', role:'Athlete', eyebrow:'For the athlete',
+      accent:'#06b6d4', accentText:'#67e8f9', soft:'rgba(6,182,212,.16)',
+      head:"The app that knows what you're meant to do — and adapts when you're not ready.",
+      features:[
+        {t:'The session card in your pocket', d:"Today's session, one swipe away. Log every set with a tap or your voice. Rest timers start themselves."},
+        {t:'Wellness that changes your program', d:"Tell it how you slept and how you feel. If you're not ready, the load moves — before you even walk in."},
+        {t:'A history that travels with you', d:'Your Athlete Passport: every program, test and milestone in one record that follows you between coaches and seasons.'}
+      ],
+      testimonial:{quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit — placeholder quote. Real athlete testimonial to come.', name:'[Athlete name]', role:'Athlete · [Club / facility]', av:'A'},
+      visual:'Athlete app — today’s session card'
+    },
+    sc: {
+      label:'S&C', role:'S&C / Performance Manager', eyebrow:'For the S&C coach',
+      accent:'#9333ea', accentText:'#c4b5fd', soft:'rgba(147,51,234,.16)',
+      head:'Programming that thinks ahead. Testing that informs progression. The squad at a glance.',
+      features:[
+        {t:'Drag-drop Program Studio', d:'Build a mesocycle in minutes. Drag schemes, supersets and progressions. AI drafts next week from the last four — you approve.'},
+        {t:'Velocity / Force / Wellness loop', d:'VBT, force plates and daily wellness feed straight into prescription. Load tunes itself to readiness, live.'},
+        {t:'Squad rack + leaderboard', d:'The whole squad on one screen. Live set logging, top lifts, attendance streaks and wellness flags.'},
+        {t:'Voice on the gym floor', d:'“Set 3 done, RPE 7” — logged. Hands-free between sets, AirPods-ready, no clipboard.'}
+      ],
+      testimonial:{quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit — placeholder quote. Real S&C testimonial to come.', name:'[Coach name]', role:'S&C Coach · [Club / facility]', av:'S'},
+      visual:'Program Studio — squad rack view'
+    },
+    coach: {
+      label:'Head Coach', role:'Head Coach', eyebrow:'For the head coach',
+      accent:'#a78bfa', accentText:'#c4b5fd', soft:'rgba(147,51,234,.14)',
+      head:'See what your S&C and physio see — without doing their job.',
+      features:[
+        {t:'Game-day brief at a glance', d:'Squad readiness, load and availability in a single view, the morning of. No spreadsheets, no chasing.'},
+        {t:'Player availability + RTP at a tap', d:"Who's fit, who's managed, who's on a return-to-play timeline — without interrupting your staff."},
+        {t:'Cross-discipline view, without crossing the line', d:'A read-only window into performance and clinical status. You see the picture; the specialists keep the controls.'}
+      ],
+      testimonial:{quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit — placeholder quote. Real head-coach testimonial to come.', name:'[Coach name]', role:'Head Coach · [Club / facility]', av:'H'},
+      visual:'Head coach — game-day readiness brief'
+    },
+    allied: {
+      label:'Allied Health', role:'Allied Health Professional', eyebrow:'For allied health',
+      accent:'#06b6d4', accentText:'#67e8f9', soft:'rgba(6,182,212,.16)',
+      head:'Clinical workflows that respect athlete autonomy and AHPRA tier-gating from the ground up.',
+      features:[
+        {t:'SOAP + body chart in seconds', d:'Structured notes, an interactive body chart and voice dictation. Documented before the athlete is off the table.'},
+        {t:'Tyro + Medicare + private health on one rail', d:'Tap-and-go billing, gap payments and rebates in one workflow. One invoice, one set of books.'},
+        {t:'Treatment plan to athlete app, no re-keying', d:"Prescribe the HEP once; it lands in the athlete's app instantly. No separate tool, no double entry."},
+        {t:'AHPRA-compliant by default', d:'Tier-gated sharing decides who sees what, automatically. Clinical data stays clinical-tier unless you say otherwise.'}
+      ],
+      testimonial:{quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit — placeholder quote. Real allied-health testimonial to come.', name:'[Clinician name]', role:'Physiotherapist · [Clinic]', av:'P'},
+      visual:'AiCare — SOAP note + body chart'
+    }
+  };
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function build(p){
+    var feats = p.features.map(function(f){
+      return '<div class="feat"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>'+
+        '<h5>'+esc(f.t)+'</h5><p>'+esc(f.d)+'</p></div>';
+    }).join('');
+    var t = p.testimonial;
+    return ''+
+      '<div class="p-eyebrow eyebrow"><span class="pip"></span>'+esc(p.eyebrow)+'</div>'+
+      '<h1 class="p-head">'+esc(p.head)+'</h1>'+
+      '<div class="p-body">'+
+        '<div class="feat-grid">'+feats+'</div>'+
+        '<div class="rail">'+
+          '<div class="testimonial"><span class="tag mono">PLACEHOLDER</span><div class="quote">'+esc(t.quote)+'</div>'+
+            '<div class="who"><span class="av">'+esc(t.av)+'</span><div><div class="name">'+esc(t.name)+'</div><div class="role">'+esc(t.role)+'</div></div></div></div>'+
+          '<div class="visual"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:relative;z-index:1"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 5h2"/></svg>'+
+            '<span class="vlabel">'+esc(p.visual)+'</span><span class="vsub eyebrow">Screenshot coming soon</span></div>'+
+          '<div class="rail-cta"><h4>Want this for your team?</h4><p>Apply for the founding-cohort trial — 30 days, full platform, free.</p><button class="btn btn-primary" data-open-modal>Apply for trial →</button></div>'+
+        '</div>'+
+      '</div>';
+  }
+
+  var stage = document.getElementById('stage');
+  var pills = document.querySelectorAll('.seg');
+  var current = 'athlete';
+
+  function setAccent(p){
+    document.documentElement.style.setProperty('--accent', p.accent);
+    document.documentElement.style.setProperty('--accent-text', p.accentText);
+    document.documentElement.style.setProperty('--accent-soft', p.soft);
+  }
+
+  function render(key, animate){
+    var p = PERSONAS[key];
+    if(!p) return;
+    current = key;
+    pills.forEach(function(b){
+      var on = b.getAttribute('data-persona')===key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on?'true':'false');
+    });
+    if(animate){
+      stage.classList.add('swapping');
+      setTimeout(function(){ setAccent(p); stage.innerHTML = build(p); stage.classList.remove('swapping'); }, 200);
+    } else {
+      setAccent(p); stage.innerHTML = build(p);
+    }
+  }
+
+  pills.forEach(function(b){
+    b.addEventListener('click', function(){ var k=b.getAttribute('data-persona'); if(k!==current){ render(k, true); if(history.replaceState) history.replaceState(null,'','#'+k); } });
+  });
+
+  // footer persona links
+  document.querySelectorAll('[data-persona-link]').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); var k=a.getAttribute('data-persona-link'); if(k!==current){ render(k, true); if(history.replaceState) history.replaceState(null,'','#'+k); }
+      document.querySelector('.hero-bar').scrollIntoView({behavior:'smooth',block:'start'}); });
+  });
+
+  // initial paint (no animation — frozen-clock-safe). Deep-linkable via #role.
+  var initial = (location.hash || '').replace('#','');
+  render(PERSONAS[initial] ? initial : 'athlete', false);
+
+  // ---------- modal ----------
+  var modal = document.getElementById('modal');
+  var roleSelect = document.getElementById('f-role');
+  function openModal(){
+    // preselect role matching current persona
+    var want = PERSONAS[current] ? PERSONAS[current].role : null;
+    if(want){ for(var i=0;i<roleSelect.options.length;i++){ if(roleSelect.options[i].value===want){ roleSelect.selectedIndex=i; break; } } }
+    modal.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function closeModal(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('click', function(e){
+    if(e.target.closest('[data-open-modal]')){ e.preventDefault(); openModal(); }
+    else if(e.target.closest('[data-close-modal]') || e.target===modal){ closeModal(); }
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
+
+  // ---------- form submit ----------
+  var form = document.getElementById('trial-form');
+  var btn = document.getElementById('submit-btn');
+  var msg = document.getElementById('form-msg');
+  var formWrap = document.getElementById('modal-form-wrap');
+  var success = document.getElementById('modal-success');
+
+  function mailtoFallback(data){
+    var body = 'Name: '+data.name+'\nRole: '+data.role+'\nOrganisation: '+(data.organisation||'-')+'\nEmail: '+data.email+'\nPhone: '+(data.phone||'-')+'\n\n'+(data.message||'');
+    return 'mailto:tim@aimshealth.com.au?subject='+encodeURIComponent('Founding cohort application — '+data.name)+'&body='+encodeURIComponent(body);
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.className='form-msg';
+    var data = {
+      name: form.name.value.trim(), role: form.role.value, organisation: form.organisation.value.trim(),
+      email: form.email.value.trim(), phone: form.phone.value.trim(), message: form.message.value.trim()
+    };
+    if(!data.name || !data.email){ msg.className='form-msg err show'; msg.innerHTML='Please add your name and email.'; return; }
+
+    btn.disabled=true; btn.textContent='Sending…';
+    fetch('/api/trial-application', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
+    }).then(function(r){
+      if(r.ok) return r.json();
+      throw new Error('bad status');
+    }).then(function(){
+      formWrap.classList.add('hidden'); success.classList.remove('hidden');
+    }).catch(function(){
+      btn.disabled=false; btn.textContent='Submit application →';
+      msg.className='form-msg err show';
+      msg.innerHTML="Couldn't send automatically. <a href=\""+mailtoFallback(data)+"\">Email your application to Tim directly →</a>";
+    });
+  });
+})();
+</script>
 </body>
 </html>
