@@ -249,6 +249,18 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
     <linearGradient id="waveHealth" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#06b6d4"/><stop offset="50%" stop-color="#9333ea"/><stop offset="100%" stop-color="#ec4899"/>
     </linearGradient>
+    <!-- AiMS = violet -->
+    <linearGradient id="waveAims" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5b21b6"/><stop offset="50%" stop-color="#9333ea"/><stop offset="100%" stop-color="#c4b5fd"/>
+    </linearGradient>
+    <!-- AiCare = cyan -->
+    <linearGradient id="waveAicare" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#155e75"/><stop offset="50%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#67e8f9"/>
+    </linearGradient>
+    <!-- AiMS Plus = mixed violet→cyan→pink -->
+    <linearGradient id="wavePlus" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9333ea"/><stop offset="50%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
   </defs>
 </svg>
 
@@ -275,10 +287,10 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
     <div class="persona-pill-wrap">
       <div class="persona-pill" role="tablist" aria-label="Choose a view">
         <button class="seg active" data-persona="product" role="tab" aria-selected="true">Product</button>
-        <button class="seg" data-persona="athlete" role="tab" aria-selected="false">Athlete</button>
         <button class="seg" data-persona="sc" role="tab" aria-selected="false">S&amp;C Coach</button>
-        <button class="seg" data-persona="coach" role="tab" aria-selected="false">Head Coach</button>
         <button class="seg" data-persona="allied" role="tab" aria-selected="false">Allied Health</button>
+        <button class="seg" data-persona="athlete" role="tab" aria-selected="false">Athlete</button>
+        <button class="seg" data-persona="coach" role="tab" aria-selected="false">Head Coach</button>
       </div>
     </div>
   </section>
@@ -419,7 +431,7 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
       accent:'#9333ea', accentText:'#c4b5fd', soft:'rgba(147,51,234,.16)',
       head:'Programming that thinks ahead. Testing that informs progression. The squad at a glance.',
       features:[
-        {t:'Drag-drop Program Studio', d:'Build a mesocycle in minutes. Drag schemes, supersets and progressions. AI drafts next week from the last four — you approve.'},
+        {t:'Drag-drop Program Studio', d:'Build a mesocycle in minutes. Drag schemes, supersets and progressions. Ai uses your programs to intelligently build and adapt programs.'},
         {t:'Velocity / Force / Wellness loop', d:'VBT, force plates and daily wellness feed straight into prescription. Load tunes itself to readiness, live.'},
         {t:'Squad rack + leaderboard', d:'The whole squad on one screen. Live set logging, top lifts, attendance streaks and wellness flags.'},
         {t:'Voice on the gym floor', d:'“Set 3 done, RPE 7” — logged. Hands-free between sets, AirPods-ready, no clipboard.'}
@@ -456,15 +468,15 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
 
   // ---------- product view (default) ----------
   var PRODUCTS = [
-    {key:'aims', cls:'aims', wm:['Ai','MS'], name:'AiMS',
+    {key:'aims', cls:'aims', wm:['Ai','MS'], name:'AiMS', wave:'waveAims',
       statement:'An athlete management system. For strength and conditioning coaches and trainers.',
       feats:['Strength programming','Testing & analytics','Bookings & scheduling','Wellness & recovery'],
       tiers:[{n:'Solo',p:'$49'},{n:'Boutique',p:'$249'},{n:'Performance',p:'$499'}]},
-    {key:'aicare', cls:'aicare', wm:['Ai','Care'], name:'AiCare',
+    {key:'aicare', cls:'aicare', wm:['Ai','Care'], name:'AiCare', wave:'waveAicare',
       statement:'The intelligent clinic manager. For allied health practices.',
       feats:['SOAP + body chart','Tyro / Medicare / private health','Telehealth','Treatment plans + HEP'],
       tiers:[{n:'Boutique',p:'$249'},{n:'Performance',p:'$349'}]},
-    {key:'plus', cls:'plus', wm:['Ai','MS+'], name:'AiMS Plus',
+    {key:'plus', cls:'plus', wm:['Ai','MS+'], name:'AiMS Plus', wave:'wavePlus',
       statement:'The whole kit. For multidisciplinary teams. Athlete management and clinic care, working together as one.',
       punch:"Yes, one — we're all you need.",
       feats:['Cross-module dashboards','Athlete passport','One billing account','Closed-loop everything'],
@@ -504,7 +516,7 @@ footer .legal{grid-column:1/-1;margin-top:40px;padding-top:22px;border-top:1px s
       }).join('');
       return '<section class="prod-card '+p.cls+'">'+
         '<div class="prod-main">'+
-          '<div class="pc-mark"><svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true"><path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#waveHealth)" stroke-width="3.4" stroke-linecap="round" fill="none"/></svg>'+
+          '<div class="pc-mark"><svg class="wave" viewBox="0 0 60 32" fill="none" aria-hidden="true"><path d="M 1 28 C 6 28, 12 8, 20 8 C 28 8, 32 24, 42 24 C 52 24, 56 -4, 60 -4" stroke="url(#'+p.wave+')" stroke-width="3.4" stroke-linecap="round" fill="none"/></svg>'+
             '<span class="word"><span class="ai">'+esc(p.wm[0])+'</span><span class="brand-half" style="-webkit-text-stroke-color:var(--pc)">'+esc(p.wm[1])+'</span></span></div>'+
           '<p class="statement">'+esc(p.statement)+(p.punch?' <b>'+esc(p.punch)+'</b>':'')+'</p>'+
           '<div class="prod-feats">'+feats+'</div>'+
