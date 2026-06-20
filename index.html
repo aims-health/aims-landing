@@ -30,6 +30,15 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--text-1);font-family:'Inter Tight',system-ui,-apple-system,sans-serif;font-weight:400;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.bg-wave{position:fixed;top:0;left:0;width:100vw;height:80vh;min-height:520px;z-index:0;pointer-events:none;opacity:.18;mix-blend-mode:screen;filter:blur(2px) saturate(1.2)}
+@media(prefers-reduced-motion: no-preference){
+  .bg-wave{animation:bgWaveDrift 24s cubic-bezier(.45,.05,.55,.95) infinite alternate}
+}
+@keyframes bgWaveDrift{
+  0%{transform:translate3d(0,0,0) scaleX(1)}
+  100%{transform:translate3d(0,18px,0) scaleX(1.04)}
+}
+.shell{position:relative;z-index:1}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(1200px 640px at 18% -12%,rgba(147,51,234,.13),transparent 60%),radial-gradient(900px 520px at 92% 12%,rgba(6,182,212,.10),transparent 60%),radial-gradient(circle at 50% 110%,rgba(147,51,234,.06),transparent 55%);pointer-events:none;z-index:0}
 .shell{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:24px 28px 88px}
 @media(max-width:640px){.shell{padding:18px 16px 56px}}
@@ -38,14 +47,14 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(1200px
 
 /* ============= LOGO LOCKUP ============= */
 .lockup{display:inline-flex;align-items:center;gap:12px;line-height:1;text-decoration:none;color:inherit}
-.lockup .word{font-family:'Inter Tight',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1;display:inline-flex;flex-direction:column;gap:3px}
+.lockup .word{font-family:'Inter Tight',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1}
 .lockup .word .ai{background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(255,255,255,.78));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .lockup .word .brand-half{color:var(--text-1);-webkit-text-stroke:.7px var(--aims);paint-order:stroke fill}
 .lockup .word .ai,.lockup .word .brand-half{display:inline}
 .lockup .word .brand-row{display:block;line-height:1}
 .lockup .word .tagline{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-3,rgba(244,243,247,.55));margin-top:3px;line-height:1}
+nav.top .lockup .word{display:inline-flex;flex-direction:column;gap:1px;font-size:20px}
 nav.top .lockup .wave{width:42px;height:auto}
-nav.top .lockup .word{font-size:20px}
 footer .lockup .wave{width:34px;height:auto}
 footer .lockup .word{font-size:19px}
 footer .lockup .word .tagline{display:none}
@@ -306,6 +315,21 @@ html.no-intro .intro{display:none}
     <span class="word"><span class="ai">Ai</span><span class="brand-half">MS Health</span></span>
   </div>
 </div>
+
+<!-- big blended/faint background wave (decorative) -->
+<svg class="bg-wave" viewBox="0 0 1600 700" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="bgWaveGrad" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity=".55"/>
+      <stop offset="50%" stop-color="#9333ea" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity=".55"/>
+    </linearGradient>
+    <filter id="bgWaveBlur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <path d="M 0 480 C 200 480, 320 140, 540 140 C 760 140, 880 480, 1080 480 C 1280 480, 1400 -80, 1600 -80" stroke="url(#bgWaveGrad)" stroke-width="42" stroke-linecap="round" fill="none" filter="url(#bgWaveBlur)"/>
+</svg>
 
 <div class="shell">
 
@@ -572,8 +596,8 @@ html.no-intro .intro{display:none}
       '</section>';
     }).join('');
     return ''+
-      '<div class="p-eyebrow eyebrow"><span class="pip"></span>Built by practicing practitioners</div>'+
-      '<h1 class="p-head"><span class="p-head-line">Athlete Management System.</span><span class="p-head-line">Clinic Management Software.</span><span class="p-head-line p-head-line--alt">Pick your modules or run them as one.</span></h1>'+
+      '<div class="p-eyebrow eyebrow"><span class="pip"></span>Built in Ballarat, Victoria, by Strength and Conditioning Coaches and Physios</div>'+
+      '<h1 class="p-head"><span class="p-head-line">Athlete Management System.</span><span class="p-head-line">Clinic Management Software.</span><span class="p-head-line p-head-line--alt">Pick your modules or stack them.</span></h1>'+
       '<div class="prod-list">'+cards+'</div>';
   }
 
