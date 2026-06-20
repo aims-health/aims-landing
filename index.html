@@ -138,7 +138,86 @@ nav.top{display:flex;justify-content:space-between;align-items:center;padding-bo
 .testimonial .role{font-size:12.5px;color:var(--text-3);line-height:1.3;margin-top:2px}
 .testimonial .tag{position:absolute;top:18px;right:18px;font-size:10px;letter-spacing:.14em;color:var(--text-3);z-index:1;border:1px solid var(--card-border);padding:3px 8px;border-radius:99px}
 
-.visual{border:1px dashed rgba(255,255,255,.13);border-radius:20px;background:var(--card-bg);min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--text-3);text-align:center;padding:24px;position:relative;overflow:hidden}
+.visual{border:1px solid rgba(255,255,255,.06);border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.025),rgba(255,255,255,.005));min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--text-3);text-align:center;padding:18px;position:relative;overflow:hidden}
+.visual.has-mock{padding:18px}
+.visual.has-mock .vlabel,.visual.has-mock .vsub{display:none}
+
+/* feature-mock — per-persona surface mockups */
+.fm{width:100%;max-width:340px;border-radius:16px;background:linear-gradient(160deg,rgba(15,15,22,.85),rgba(8,8,12,.92));border:1px solid rgba(255,255,255,.06);box-shadow:0 18px 50px rgba(0,0,0,.35);padding:14px 14px 16px;position:relative;overflow:hidden;text-align:left;font-family:'Inter Tight',sans-serif}
+.fm-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,247,.46);line-height:1}
+.fm-eyebrow.aim{color:rgba(196,181,253,.7)}
+.fm-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.fm-title{font-weight:700;font-size:15px;color:#f4f3f7;letter-spacing:-.02em;line-height:1.1;margin-bottom:3px}
+.fm-sub{font-family:'DM Mono',ui-monospace,monospace;font-size:10.5px;color:rgba(244,243,247,.45);letter-spacing:.04em;margin-bottom:10px}
+.fm-chip{display:inline-flex;align-items:center;gap:5px;font-family:'Barlow Condensed',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:4px 9px;border-radius:99px;line-height:1}
+.fm-chip .dot{width:6px;height:6px;border-radius:50%}
+.fm-chip.track{background:rgba(132,204,22,.14);color:#bef264;border:1px solid rgba(132,204,22,.3)}
+.fm-chip.track .dot{background:#84cc16}
+.fm-chip.build{background:rgba(244,243,247,.05);color:rgba(244,243,247,.6);border:1px solid rgba(244,243,247,.1)}
+.fm-chip.build .dot{background:rgba(244,243,247,.5)}
+.fm-chip.alert{background:rgba(239,68,68,.13);color:#fca5a5;border:1px solid rgba(239,68,68,.32)}
+.fm-chip.alert .dot{background:#ef4444}
+.fm-chip.catch{background:rgba(245,158,11,.13);color:#fcd34d;border:1px solid rgba(245,158,11,.32)}
+.fm-chip.catch .dot{background:#f59e0b}
+.fm-label{font-family:'Barlow Condensed',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,243,247,.42);margin-top:10px;margin-bottom:5px}
+.fm-ex{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:9px;background:rgba(255,255,255,.018);border:1px solid rgba(255,255,255,.04);margin-bottom:4px}
+.fm-ex.done{background:linear-gradient(100deg,rgba(132,204,22,.06),rgba(132,204,22,.02));border-color:rgba(132,204,22,.22)}
+.fm-badge{font-family:'DM Mono',ui-monospace,monospace;font-size:9px;font-weight:700;padding:3px 6px;border-radius:5px;background:rgba(147,51,234,.18);color:#c4b5fd;letter-spacing:.04em;min-width:22px;text-align:center}
+.fm-ex.done .fm-badge{background:rgba(132,204,22,.18);color:#bef264}
+.fm-name{flex:1;font-size:11.5px;color:rgba(244,243,247,.86);font-weight:500;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fm-dose{font-family:'DM Mono',ui-monospace,monospace;font-size:10.5px;color:rgba(244,243,247,.65);letter-spacing:.04em}
+.fm-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:6px 0}
+.fm-mic{position:absolute;bottom:14px;right:14px;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#9333ea,#ec4899);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(147,51,234,.42)}
+.fm-mic svg{width:16px;height:16px;stroke:#fff;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* SC — squad rack mockup */
+.fm-sc{max-width:380px}
+.fm-weeks{display:flex;gap:5px;margin-bottom:10px}
+.fm-week{flex:1;height:18px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',ui-monospace,monospace;font-size:9px;color:rgba(244,243,247,.45);letter-spacing:.04em}
+.fm-week.active{background:linear-gradient(100deg,#9333ea,#ec4899);color:#fff;border-color:rgba(255,255,255,.18);font-weight:700;box-shadow:0 4px 14px rgba(147,51,234,.32)}
+.fm-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fm-col{padding:8px;border-radius:9px;background:rgba(255,255,255,.018);border:1px solid rgba(255,255,255,.05)}
+.fm-col-head{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:rgba(244,243,247,.78);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.fm-col-head .cnt{font-family:'DM Mono',ui-monospace,monospace;font-size:8.5px;color:rgba(244,243,247,.42);letter-spacing:.04em}
+.fm-mini{display:flex;align-items:center;gap:6px;padding:5px 6px;margin-bottom:3px;border-radius:6px;background:rgba(255,255,255,.022)}
+.fm-mini .fm-badge{font-size:8px;padding:2px 5px}
+.fm-mini-name{font-size:10.5px;color:rgba(244,243,247,.78);letter-spacing:-.01em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fm-mini-dose{font-family:'DM Mono',ui-monospace,monospace;font-size:9.5px;color:rgba(244,243,247,.55)}
+
+/* Coach — squad pulse mockup */
+.fm-coach{max-width:340px}
+.fm-pulse-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:6px;margin-bottom:12px}
+.fm-pulse-ath{position:relative;aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,rgba(147,51,234,.25),rgba(236,72,153,.18));border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',ui-monospace,monospace;font-size:9px;font-weight:700;color:#f4f3f7;letter-spacing:.04em}
+.fm-pulse-ath .ring{position:absolute;inset:-2px;border-radius:50%;border:2px solid transparent}
+.fm-pulse-ath.ok .ring{border-color:#84cc16}
+.fm-pulse-ath.amber .ring{border-color:#f59e0b}
+.fm-pulse-ath.red .ring{border-color:#ef4444}
+.fm-pulse-ath.grey .ring{border-color:rgba(244,243,247,.18)}
+.fm-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.fm-stat{padding:6px 7px;border-radius:7px;background:rgba(255,255,255,.022);border:1px solid rgba(255,255,255,.045);text-align:center}
+.fm-stat .n{font-family:'DM Mono',ui-monospace,monospace;font-size:14px;font-weight:700;color:#f4f3f7;letter-spacing:-.02em;line-height:1}
+.fm-stat .n.ok{color:#bef264}
+.fm-stat .n.amber{color:#fcd34d}
+.fm-stat .n.red{color:#fca5a5}
+.fm-stat .l{font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,243,247,.5);margin-top:3px;line-height:1}
+
+/* Allied — AiCare consult mockup */
+.fm-allied{max-width:340px}
+.fm-allied-head{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.fm-allied-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#22d3ee);display:flex;align-items:center;justify-content:center;color:#072e34;font-weight:800;font-size:13px;letter-spacing:-.02em}
+.fm-allied-meta{flex:1;line-height:1.15}
+.fm-allied-meta .n{font-size:13px;color:#f4f3f7;font-weight:600;letter-spacing:-.01em}
+.fm-allied-meta .t{font-family:'DM Mono',ui-monospace,monospace;font-size:10px;color:rgba(244,243,247,.45);letter-spacing:.04em;margin-top:2px}
+.fm-soap{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:10px}
+.fm-soap-cell{padding:6px 7px;border-radius:7px;background:rgba(255,255,255,.022);border:1px solid rgba(255,255,255,.045);text-align:left}
+.fm-soap-cell .lt{font-family:'DM Mono',ui-monospace,monospace;font-size:9px;font-weight:700;color:#67e8f9;letter-spacing:.04em;margin-bottom:3px}
+.fm-soap-cell .lc{font-size:9.5px;color:rgba(244,243,247,.55);line-height:1.3}
+.fm-body{display:flex;justify-content:center;margin-bottom:10px}
+.fm-body svg{width:60px;height:auto}
+.fm-tyro{display:flex;align-items:center;justify-content:space-between;padding:8px 11px;border-radius:9px;background:linear-gradient(100deg,rgba(6,182,212,.12),rgba(34,211,238,.06));border:1px solid rgba(34,211,238,.25)}
+.fm-tyro .l{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#67e8f9}
+.fm-tyro .a{font-family:'DM Mono',ui-monospace,monospace;font-size:11.5px;color:#f4f3f7;font-weight:700;letter-spacing:.04em}
+
 .visual::before{content:'';position:absolute;inset:0;background:radial-gradient(70% 100% at 50% 0%,var(--accent-soft),transparent 60%);pointer-events:none}
 .visual .vlabel{font-size:13px;font-weight:600;color:var(--text-2);position:relative;z-index:1}
 .visual .vsub{font-size:11.5px;letter-spacing:.12em;position:relative;z-index:1}
@@ -492,7 +571,8 @@ html.no-intro .intro{display:none}
         {t:'A history that travels with you', d:'Your Athlete Passport: every program, test and milestone in one record that follows you between coaches and seasons.'}
       ],
       testimonial:{quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit — placeholder quote. Real athlete testimonial to come.', name:'[Athlete name]', role:'Athlete · [Club / facility]', av:'A'},
-      visual:'Athlete app — today’s session card'
+      visual:'Athlete app — today’s session card',
+      mock:'<div class="fm"><div class="fm-row"><div class="fm-eyebrow">Fri 20 Jun · Today</div><div class="fm-chip track"><span class="dot"></span>Tracking</div></div><div class="fm-title">Strength · Phase 4</div><div class="fm-sub">5 ex · 15 sets · ~35 min</div><div class="fm-divider"></div><div class="fm-label">Superset A</div><div class="fm-ex"><span class="fm-badge">A1</span><span class="fm-name">Back Squat</span><span class="fm-dose">4×8</span></div><div class="fm-ex"><span class="fm-badge">A2</span><span class="fm-name">Pallof Press</span><span class="fm-dose">3×10</span></div><div class="fm-label">Superset B</div><div class="fm-ex"><span class="fm-badge">B1</span><span class="fm-name">Bench Press</span><span class="fm-dose">4×6</span></div><div class="fm-ex done"><span class="fm-badge">B2</span><span class="fm-name">Single Arm Row</span><span class="fm-dose">3×8 ✓</span></div><div class="fm-mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="13" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div></div>'
     },
     sc: {
       label:'S&C', role:'S&C / Performance Manager', eyebrow:'For the S&C coach',
@@ -505,7 +585,8 @@ html.no-intro .intro{display:none}
         {t:'Voice on the gym floor', d:'“Set 3 done, RPE 7” — logged. Hands-free between sets, AirPods-ready, no clipboard.'}
       ],
       testimonial:{quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit — placeholder quote. Real S&C testimonial to come.', name:'[Coach name]', role:'S&C Coach · [Club / facility]', av:'S'},
-      visual:'Program Studio — squad rack view'
+      visual:'Program Studio — squad rack view',
+      mock:'<div class="fm fm-sc"><div class="fm-row"><div class="fm-eyebrow aim">Sarah Evans · Week 3 of 6</div><div class="fm-chip build"><span class="dot"></span>Phase 4</div></div><div class="fm-weeks"><div class="fm-week">W1</div><div class="fm-week">W2</div><div class="fm-week active">W3</div><div class="fm-week">W4</div><div class="fm-week">W5</div><div class="fm-week">W6</div></div><div class="fm-cols"><div class="fm-col"><div class="fm-col-head"><span>Mon</span><span class="cnt">6 ex · 18 sets</span></div><div class="fm-mini"><span class="fm-badge">A1</span><span class="fm-mini-name">Back Squat</span><span class="fm-mini-dose">4×6</span></div><div class="fm-mini"><span class="fm-badge">A2</span><span class="fm-mini-name">Nordic Lower</span><span class="fm-mini-dose">3×8</span></div><div class="fm-mini"><span class="fm-badge">B1</span><span class="fm-mini-name">Trap Bar DL</span><span class="fm-mini-dose">4×5</span></div><div class="fm-mini"><span class="fm-badge">B2</span><span class="fm-mini-name">Pallof Press</span><span class="fm-mini-dose">3×10</span></div></div><div class="fm-col"><div class="fm-col-head"><span>Wed</span><span class="cnt">5 ex · 15 sets</span></div><div class="fm-mini"><span class="fm-badge">A1</span><span class="fm-mini-name">Bench Press</span><span class="fm-mini-dose">4×6</span></div><div class="fm-mini"><span class="fm-badge">A2</span><span class="fm-mini-name">Cable Row</span><span class="fm-mini-dose">3×8</span></div><div class="fm-mini"><span class="fm-badge">B1</span><span class="fm-mini-name">Pull Up</span><span class="fm-mini-dose">4×5</span></div><div class="fm-mini"><span class="fm-badge">B2</span><span class="fm-mini-name">DB Shoulder</span><span class="fm-mini-dose">3×8</span></div></div></div></div>'
     },
     coach: {
       label:'Head Coach', role:'Head Coach', eyebrow:'For the head coach',
@@ -517,7 +598,8 @@ html.no-intro .intro{display:none}
         {t:'Cross-discipline view, without crossing the line', d:'A read-only window into performance and clinical status. You see the picture; the specialists keep the controls.'}
       ],
       testimonial:{quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit — placeholder quote. Real head-coach testimonial to come.', name:'[Coach name]', role:'Head Coach · [Club / facility]', av:'H'},
-      visual:'Head coach — game-day readiness brief'
+      visual:'Head coach — game-day readiness brief',
+      mock:'<div class="fm fm-coach"><div class="fm-row"><div class="fm-eyebrow">Match Day · Sat 21 Jun</div><div class="fm-chip track"><span class="dot"></span>20 / 24 ready</div></div><div class="fm-title">Squad readiness</div><div class="fm-sub">Wellness · Load · Availability</div><div class="fm-pulse-grid"><div class="fm-pulse-ath ok"><div class="ring"></div>DB</div><div class="fm-pulse-ath ok"><div class="ring"></div>FB</div><div class="fm-pulse-ath ok"><div class="ring"></div>WC</div><div class="fm-pulse-ath amber"><div class="ring"></div>IQ</div><div class="fm-pulse-ath ok"><div class="ring"></div>BS</div><div class="fm-pulse-ath ok"><div class="ring"></div>AA</div><div class="fm-pulse-ath red"><div class="ring"></div>EA</div><div class="fm-pulse-ath ok"><div class="ring"></div>PA</div><div class="fm-pulse-ath ok"><div class="ring"></div>MB</div><div class="fm-pulse-ath grey"><div class="ring"></div>GB</div></div><div class="fm-summary"><div class="fm-stat"><div class="n ok">20</div><div class="l">Ready</div></div><div class="fm-stat"><div class="n amber">2</div><div class="l">Managed</div></div><div class="fm-stat"><div class="n red">1</div><div class="l">RTP</div></div><div class="fm-stat"><div class="n">1</div><div class="l">Wellness</div></div></div></div>'
     },
     allied: {
       label:'Allied Health', role:'Allied Health Professional', eyebrow:'For allied health',
@@ -530,7 +612,8 @@ html.no-intro .intro{display:none}
         {t:'AHPRA-compliant by default', d:'Tier-gated sharing decides who sees what, automatically. Clinical data stays clinical-tier unless you say otherwise.'}
       ],
       testimonial:{quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit — placeholder quote. Real allied-health testimonial to come.', name:'[Clinician name]', role:'Physiotherapist · [Clinic]', av:'P'},
-      visual:'AiCare — SOAP note + body chart'
+      visual:'AiCare — SOAP note + body chart',
+      mock:'<div class="fm fm-allied"><div class="fm-allied-head"><div class="fm-allied-av">NM</div><div class="fm-allied-meta"><div class="n">Nick Mitchell</div><div class="t">14:30 · 45 min · Initial · Knee</div></div><div class="fm-chip catch"><span class="dot"></span>Sx&nbsp;Day&nbsp;4</div></div><div class="fm-body"><svg viewBox="0 0 60 110" fill="none" stroke="rgba(244,243,247,.5)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="30" cy="10" r="6"/><path d="M22 18 L18 36 L20 64 L18 92 L22 105"/><path d="M38 18 L42 36 L40 64 L42 92 L38 105"/><path d="M22 18 L38 18 L42 30 L38 44 L22 44 L18 30 Z"/><line x1="30" y1="22" x2="30" y2="44"/><circle cx="35" cy="68" r="3.2" fill="rgba(239,68,68,.6)" stroke="#ef4444" stroke-width="1.6"/></svg></div><div class="fm-soap"><div class="fm-soap-cell"><div class="lt">S</div><div class="lc">Anterior knee · 5/10 stairs</div></div><div class="fm-soap-cell"><div class="lt">O</div><div class="lc">CKC fail R · pain&nbsp;-30°</div></div><div class="fm-soap-cell"><div class="lt">A</div><div class="lc">PFP, quad inhibition</div></div><div class="fm-soap-cell"><div class="lt">P</div><div class="lc">VMO loading + HEP</div></div></div><div class="fm-tyro"><span class="l">Tyro · Tap to bill</span><span class="a">$92.40</span></div></div>'
     }
   };
 
@@ -568,8 +651,9 @@ html.no-intro .intro{display:none}
         '<div class="rail">'+
           '<div class="testimonial"><span class="tag mono">PLACEHOLDER</span><div class="quote">'+esc(t.quote)+'</div>'+
             '<div class="who"><span class="av">'+esc(t.av)+'</span><div><div class="name">'+esc(t.name)+'</div><div class="role">'+esc(t.role)+'</div></div></div></div>'+
-          '<div class="visual"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:relative;z-index:1"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 5h2"/></svg>'+
-            '<span class="vlabel">'+esc(p.visual)+'</span><span class="vsub eyebrow">Screenshot coming soon</span></div>'+
+          '<div class="visual'+(p.mock?' has-mock':'')+'">'+
+            (p.mock || '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:relative;z-index:1"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 5h2"/></svg><span class="vlabel">'+esc(p.visual)+'</span><span class="vsub eyebrow">Screenshot coming soon</span>')+
+          '</div>'+
         '</div>'+
       '</div>';
   }
