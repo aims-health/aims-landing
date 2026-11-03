@@ -433,3 +433,13 @@ footer .wrap{grid-template-columns:1.4fr repeat(4,1fr)}
 .pcustom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;border-radius:22px;border:1px dashed #CFCBC2;padding:22px 30px;background:#fff}
 .pcustom .tier{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
 .pcustom p{font-size:16px;margin-top:6px}
+/* v2: hero walkthrough, clinical, demo, features */
+.hero-walk .phone{width:300px}
+.who-more{margin-top:34px;font-size:17px;color:var(--ink-2)}
+.cs-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;margin-top:40px}
+.cs-card{border-radius:22px;background:#fff;border:1px solid #E2E0DA;padding:30px}.cs-card h3{font-size:24px;margin-top:14px}.cs-card p{margin-top:12px;font-size:16.5px}.cs-card .ticks{margin-top:14px}
+.tag.live{background:rgba(52,199,89,.14);color:#1E8E3E}
+.cs-media{margin-top:56px}.cs-media .cap{text-align:center;margin-top:14px}
+.demo-vid video{width:100%;height:auto;border-radius:18px;display:block;background:#000;box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(0,0,0,.5)}
+.clip-card .reel{border-radius:20px;overflow:hidden;max-width:300px}.clip-card .reel video{display:block;width:100%;height:auto}
+@media (max-width:899px){.cs-grid{grid-template-columns:1fr}.hero-walk .phone{width:250px}}
