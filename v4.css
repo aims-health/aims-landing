@@ -414,3 +414,22 @@ footer ul{list-style:none;display:grid;gap:9px;font-size:15px;color:var(--t2)}
   .tl-shot,.tl-ev.L .tl-shot,.tl-ev.R .tl-shot{position:static;transform:none;margin-top:14px}
   .tl-shot .phone{width:210px}.tl-shot .shot{width:100%}
 }
+
+/* v2: store badges, socials, custom plan */
+.stores .badge{display:inline-flex;align-items:center;height:48px}
+.stores .badge img{height:48px;width:auto;display:block}
+.stores .badge.gp img{height:71px;margin:-11.5px -9px}   /* the Play PNG has built-in padding */
+.stores.foot{margin-top:4px;flex-direction:column;align-items:flex-start;gap:10px}
+.stores.foot .badge,.stores.foot .badge img{height:40px}
+.stores.foot .badge.gp img{height:59px;margin:-9.5px -7.5px}
+footer .stores.foot img{height:40px}footer .stores.foot .badge.gp img{height:59px}
+.socials{display:flex;gap:10px;margin-top:16px}
+.socials a{display:inline-flex;width:40px;height:40px;border-radius:12px;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--t2)}
+.socials a:hover{color:var(--t1);border-color:var(--vt)}
+.socials svg{width:20px;height:20px}
+.menu .socials{padding:6px 0 0}
+footer .wrap{grid-template-columns:1.4fr repeat(4,1fr)}
+@media (max-width:899px){footer .wrap{grid-template-columns:1fr 1fr}footer .wrap>div:first-child{grid-column:1/-1}}
+.pcustom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;border-radius:22px;border:1px dashed #CFCBC2;padding:22px 30px;background:#fff}
+.pcustom .tier{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.pcustom p{font-size:16px;margin-top:6px}
