@@ -433,3 +433,33 @@ footer .wrap{grid-template-columns:1.4fr repeat(4,1fr)}
 .pcustom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;border-radius:22px;border:1px dashed #CFCBC2;padding:22px 30px;background:#fff}
 .pcustom .tier{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
 .pcustom p{font-size:16px;margin-top:6px}
+/* v2: hero walkthrough, clinical, demo, features */
+.hero-walk .phone{width:300px}
+.who-more{margin-top:34px;font-size:17px;color:var(--ink-2)}
+.cs-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;margin-top:40px}
+.cs-card{border-radius:22px;background:#fff;border:1px solid #E2E0DA;padding:30px}.cs-card h3{font-size:24px;margin-top:14px}.cs-card p{margin-top:12px;font-size:16.5px}.cs-card .ticks{margin-top:14px}
+.tag.live{background:rgba(52,199,89,.14);color:#1E8E3E}
+.cs-media{margin-top:56px}.cs-media .cap{text-align:center;margin-top:14px}
+.demo-vid video{width:100%;height:auto;border-radius:18px;display:block;background:#000;box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(0,0,0,.5)}
+.clip-card .reel{border-radius:20px;overflow:hidden;max-width:300px}.clip-card .reel video{display:block;width:100%;height:auto}
+@media (max-width:899px){.cs-grid{grid-template-columns:1fr}.hero-walk .phone{width:250px}}
+/* about: the tools we relied on, collapsing into one AiMS tile */
+.collapse{margin-top:48px;display:flex;flex-direction:column;align-items:center}
+.old-stack{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;width:100%}
+.old-stack li{border-radius:16px;padding:16px 18px;font-size:15.5px;line-height:1.35;color:var(--t2);font-weight:600;
+  background:linear-gradient(140deg,rgba(139,61,255,.16),rgba(139,61,255,.04) 55%,rgba(255,255,255,.03));border:1px solid rgba(167,139,250,.18);
+  transition:transform .9s var(--ease),opacity .9s var(--ease);transition-delay:calc(var(--i) * 45ms)}
+.collapse.rv{opacity:1;transform:none}
+.collapse:not(.in) .old-stack li{opacity:0;transform:translateY(-14px) scale(.97)}
+.collapse.in .old-stack li{animation:squeeze 1.1s var(--ease) calc(1.3s + var(--i) * 40ms) both}
+@keyframes squeeze{to{transform:translateY(10px) scale(.94);opacity:.55}}
+.into{height:70px;width:2px;margin:18px 0;background:linear-gradient(rgba(167,139,250,.1),#8B3DFF);position:relative}
+.into span{position:absolute;left:50%;bottom:-2px;width:12px;height:12px;border-right:2px solid #8B3DFF;border-bottom:2px solid #8B3DFF;transform:translateX(-50%) rotate(45deg)}
+.aims-tile{display:flex;align-items:center;gap:18px;padding:26px 34px;border-radius:24px;background:linear-gradient(135deg,#8B3DFF,#5B21B6 60%,#2E1065);color:#fff;
+  box-shadow:0 20px 60px rgba(139,61,255,.35);transform:scale(.9);opacity:0;transition:transform 1s var(--ease) 1.6s,opacity 1s var(--ease) 1.6s}
+.collapse.in .aims-tile{transform:none;opacity:1}
+.aims-tile img{width:52px;height:52px}.aims-tile b{display:block;font-size:30px;letter-spacing:-.03em}.aims-tile span{font-size:15px;opacity:.85}
+.vision{max-width:900px;margin:60px auto 0;text-align:center;font-size:30px;line-height:1.3;font-weight:700;letter-spacing:-.02em}
+.vision .eyebrow{display:block;margin-bottom:16px}
+@media (max-width:899px){.old-stack{grid-template-columns:1fr 1fr;gap:8px}.old-stack li{font-size:13.5px;padding:12px}.vision{font-size:22px}}
+@media (prefers-reduced-motion:reduce){.collapse .old-stack li,.collapse .aims-tile{animation:none;transition:none;opacity:1;transform:none}}
