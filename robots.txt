@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aimshealth.com.au/sitemap.xml
